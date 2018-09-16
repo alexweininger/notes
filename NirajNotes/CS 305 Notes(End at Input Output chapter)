@@ -1,0 +1,482 @@
+# CS 305
+CS 305 Notes
+
+8/26/18
+**Ch 1. Introduction**
+High Level vs Low Level:
+	-A low level refers to the basic, primitive parts of something. Groups of these make up the high level
+	-High level refers to something that makes sense of these low level parts into something bigger
+	-Ex. Computer’s microchips/microcircuits vs the computer itself; car nuts and bolts vs the engine
+
+Black box: “a simple unit behaving in predictable ways”; ex. Engine, car is a group of black boxes
+
+Advantages of C Programming Language:
+	-Access to any level on the computer, including raw machine language
+	-C is very simple and compact; balance simplicity and readability
+	-Interacts with local environment well
+	-Allows commands that in other languages aren’t allowed; by being careful, this allows much more freedom in coding
+
+**Ch 2 Using a Compiler**
+Compiler: Translates high level language into machine language from a text doc, called the “source code”; this allows the computer to understand what needs to be done and executed
+Run C Program: 
+-	./nameOfProgram; “dot-slash” prefix
+-	Looks into current directory
+Compile C Program:
+-	In GNU environments using the GCC(GNU Compiler Collection)
+-	“gcc file_name”
+
+Note: C programs are case sensitive
+Errors:
+-	Compile error: errors caught while compiling, such as something misspelled or an error in the formatting (missing bracket, etc.)
+-	Run-time error: Error occurs while program is running(infinite loop, wrong outcome)
+
+Source code names “accounts” >> accounts.c
+Executable file >> accounts
+
+To run this program, we would use ./accounts
+
+**Ch 3 Form of a C Program**
+Block: A section of code within a function; in the main() function, the end of it means the end of the program (Usually) while other functions transfer control back to the main or whatever function called it;
+-C Programs start whereever the main() function starts; this could be line 1 or line 100
+-“ } “ signifies the end of a function
+- “ ; “ is used like in Java
+- */ and /* are used to create comments
+
+**Ch 4 Functions**
+-Functions are blocks performing specific tasks; they make a section of code reusable
+-Function in C must have a name beginning with a letter or ‘_’ character
+ 
+```c
+Void multiply_two_numbers(int a, int b){
+	Int c;
+	c = a * b
+	printf(“%d/n”, c);  	//%d specifies integer output
+```
+
+A function needs to return value of the same type; if it is type void, however, it should not return anything. 
+Functions should have their return type declared at the beginning of the code in a global sense (prototype) and actually defined somewhere in the code
+exit(0)- Terminates the programs anywhere in the code; returns 0
+
+**Ch 5 Variable and Declarations**
+-C has 5 types of integers: char, short, int, long, long long
+-Difference is how much memory is saved for each
+-char is used only in arrays; variables should use int data type
+
+Example variable declarations in C:
+-	float temp1, temp2, temp3;
+-	int initial_year;
+-	initial_year = 1969;
+
+Cast operator: (type) variable; converts one variable type to another
+Storage classes: extern and static; extern makes variables globally accessible, static makes variables the same across all instances of a function
+-	auto: redundant but essentially the opposite of static
+-	register: store in one of computer’s register
+Practice:
+int start_temp, end_temp;
+float and double differentiate in their precision
+int covers both + and – while unsigned int only covers +
+float num = 23.1256
+int num_integer = (int)num
+
+¬**Ch 6 Scope**
+Global vs local: global variables are visible to the entire program while local is kept within a function; global is defined outside of functions, after the #include
+
+```c
+#include <stdio.h>
+int global_integer
+```
+
+Global vars are available anywhere, anytime, and anywhere in the program until the program stops running
+Communication via parameters: local variables can communicate with other variables via the parameters of a function
+
+**Ch 7 Expressions and Operators**
+-Operand: character/string of characters that operates on one or more values to produce a result
+int remainder = 5/2;
+printf(“%d/n”, remainder)
+
+10 – (-5)
+
+**Ch 8 Parameters**
+Paramaters can be passed by value or by reference:
+-	Value parameters: one-way information; only the values are received and these values cannot be altered
+-	Variable parameters: pass information back to the calling function; these values can be altered
+
+ In the prototype function(function defined at top of code), it’s good practice to include parameter variable names
+	-function(int var1) vs function(int)
+
+Actual parameter: parameter called by function
+Formal parameter: temporary name for parameter used in function declarations
+
+Passing by reference allows you to change the original parameter as opposed to just altering the passed value(if var1 = 1 the altering var1 instead of just 1)
+A function call can be used as an actual parameter if it fits the data type
+-actual and formal parameters don’t need to share the same names
+**Ch 9 Pointers**
+Pointer: has the address or location of a chunk of memory; “point to a chunk of memory”
+-	Pointers allow to pass by reference(passing address instead of value)
+-	Pointers also work with functions
+-	Make C very versatile in alternating between value and reference
+
+Pointers are created using ‘ * ‘ and ‘ & ‘ operators; * is used to declare
+-	Float *total_cost_ptr (read “Declare a float pointer called var name)
+While & finds the address, used as so:
+-	Total_cost_prt = &total_cost (Pointer now points to address of total_cost)
+
+Pointer types: depending on the data type, you can define a pointer to point to an address of a specific data type; it will automatically cast it to the type the pointer is; use when you need a float address to be an integer (use int pointer to find float address to cast as int)
+Cast by doing (type *) pointer_variable
+
+***Pointers should not be initialized with a value; it can be done but it wastes memory and space	 
+Because the return command can only pass back one value, pointers become more useful through passing reference by allowing multiple values to be changed
+
+When pointers are called in a function:
+-	Declared: get_values(int *numptr1, int *numptr2)
+-	Called: get_values(&num1, &num2)
+Review:
+Pointers are variables that reference the address of another variable that has a data value
+Variables are declared to be pointers using *
+Pointers will autocast different data types; careful when doing this
+Int *int_ptr = (double *) int_ptr
+Float *number = 2.65; don’t do this because it’s essentially wasting date; pointers can not have values, even though it doesn’t do anything to the program
+
+**Ch 10 Decisions (Conditional Statements)**
+If…else… statement review; same as java
+
+‘ ? ‘ operator: (condition) ? expression1 : expression2
+-	Evaluates conditions; expression1 returns if true and expression2 if false
+Switch statement: 
+```c
+switch (integer or character expression)
+	case constant1 : statement1;
+	break;
+
+if(1 != 42){
+	printf(“Thank heavens for math!”)
+}
+```
+
+
+
+**Ch 11 Loops**
+
+Review over while, do-while, and for loops; same as Java
+In while loops, can initiate a value to a variable if wrapped with parentheses 
+For loops can include empty statements; if both the initialization and increment are left out, we’re left with while loop essentially
+Break- breaks a loop
+Return- breaks a loop in a function
+Continue-automatically goes to end of loop to start another loop
+
+Kal: 2.1-2.8
+-	Review over what pointers are and how to initialize
+Initialize multiple pointers:
+-	int *a, b, c 		//wrong; b and c are just ints
+-	int *a, *b, *c	//right; all are now int pointers
+
+* and & essentially cancel each other out so:
+	- *ptr = *(&num) is just num
+	-Additionally: num = *ptr + 1 >> num = num + 1 or even (*ptr)++
+
+When a function parameter is set as a pointer formally, we pass through the address of the desired value which allows the function to directly and globally change the value the given address or variable.
+In addition if a pointer is set to the address of a variable (ptr = &num) and is passed through, it will only refer to the value at the address the pointer is pointing too. This is why we pass through the &num and not ptr.
+
+Arrays: Passing arrays as arguments is the same as passing the address of the first array index point
+list is the same as &list[0] if list is an array
+Because it is only the first index point, array names are not pointer variables, they are pointer constants.
+Character pointers: If a char pointer is declared and set to a string, it will be assigned to the address of the first character; this can be changed but then the first address assigned will be in accessible
+Pointer arithmetic: 
+-	char *verse = “The day is done”;
+-	Stored somewhere, verse is assigned to address of ‘T’
+-	Verse + 1 is address of ‘h’
+-	Verse + 2 is address of ‘e’
+-	Verse++ and verse += h are also valid
+-	Incrementing a pointer means finding the next data type address, regardless of how many bytes 	
+Pointers to Structures- fun6(text), pointer to a structure variable of type Book is passing by value. Additionally, fun7(&text) also helps avoid extra processing while achieving the same function. Finally, we add a formal parameter void fun7(Book *bp).
+In other words, Structure* var_name can create a pointer referring to the address of a structure/object. 
+We can also use a more common method in C, due to frequency of pointers to structures:
+	Sp -> name
+Pointers to functions: Function names are actually pointers themselves, as arrays are pointers to themselves. We would, however, need pointers if we want to pass a function as a parameter, such as making a table but having a double value that could either be division, reciprocal, etc.
+Ex. double(*fp)(int)
+
+Void pointers- Can point to any type of object or function( void *pv vs. void *getNode(int size); Even though void pointers can point to any type, it cannot be dereferenced because its type is void; we can do this however, if we know the data type
+* (double*) pv
+
+**Ch 14 Arrays**
+Arrays: Grouping of same type variables under a single name; up to three dimensionality
+Practice:
+Double array- double double_array[4][5] = {1,1,1,1,1,,1,1,1,…
+Since arrays are pointers, C can just reference the address when an array is passed through as a parameter to a function
+
+**Ch 15 Strings**
+Strings: Sequence of text characters to be a string variable
+-Strings can be any size/length, but it’s size is determined by the position of the first null character, denoted by ‘/0’ in the string; most C programs add/remove it automatically
+-To declare a String, we need to make a character array
+	Ex. char string1[] = “A string declared as an array.\n”; 	//Best way to do so; null character added automatically
+	Ex. char *string2 = “A string declared as a pointer.\n”	//This also works
+	Ex. char string3[30];		//Use when actual string data is unknown but there’s a general idea of how long it will be(name, location, essay, etc.)
+
+String Arrays: When an array of text is needed, we need a string array, not just separate char arrays. Initialize like so:
+```c
+Char *menu[] =
+{
+    “string”,
+    “string1”,
+    “string2”,
+…
+};
+```
+-Combines methods 1 and 2 of creating a String to make a string array
+
+String library functions:
+atof: converts string to float value
+atoi: converts string to int
+atol: long
+strcat: concatenates two strings
+strcmp: compares two strings and returns which one comes first alphabetically; returns 0 if same values or if first string comes first; returns -1 if seconds string comes first
+strcpy: copies a string into a string variable
+strlen: length of string in characters
+strncat: concatenates a specified numbers of characters
+strncmp: certain number of characters compared
+strncpy: certain number copied
+strstr: sees if a substring is located in a larger string
+
+**Kal 3.3**
+Dynamic Storage Allocation: malloc, calloc, sizeof, free
+-When creating list of values, arrays are to the go to; however, one disadvantage is the size must be determined beforehand
+-Linked list allows new nodes to be added and storage allocated for it
+-Linked list are referred to “dynamic storage allocation” due to adding storage as needed while array is seen as “static” storage
+malloc- ex. void *malloc(size_t size) where size_t is a undefined type of int; malloc allocates memory and will return a pointer to first byte of this memory; the difference is it will not initialize the memory;
+Lecture 9/3/18
+Static memory is pre-allocated for different programs, files, OS, etc.; 
+Dynamic allocated memory is know as a “heap”; free storage that can be used by any program; before closing a program, the memory taken from the “heap” from the OS must be returned to the OS
+malloc- allocated a specified size of bytes and returns a pointer to the first byte; not initialized and returns null if no storage available; declared as follows:
+```c
+char *cp = (char *)malloc(20);
+//Programmer should be keeping track of types and storage management
+//calloc-  allocates memory for an array of values that are a certain size; following //is the prototype:
+void *calloc(size_t num, size_t size);
+char *cp = calloc(10, 20);
+//Useful for allocating storage for arrays
+//Sizeof- finds needed bytes for storing its argument; 
+	Ex. sizeof(int)		//returns 4
+```
+Used for portable code, where the amount of bytes used is different, such as 2 for an int on one and 4 on another. Used alongside malloc and calloc:
+	Double *dp = (double*) malloc(sizeof(double));
+free- used to free storage used/taken up through malloc or calloc functions;
+	free(void *ptr) ex. free(np)
+**Ch 19 More data types(enum, struct, typedef, etc.)**
+C allows various data types and to create your own, but there are some that are implemented into C already
+enum- “enumerated data”; a list of words that a variable of type enum can take as its value; 
+ex.
+int main()
+{
+	enum compass_direction{
+		north,
+		east,
+		south,
+		west,
+	}
+enum compass_direction my_direction;
+my_direction = west;
+return 0;
+}
+-Prevents computer from having to process numbers and instead focus on words themselves; higher-level method; enums match alongside switch statements; enums are useful for their simplicity and ability to make words into integer values in terms of comparison
+void- main function is to have functions that return no value; simply have a return command and the function will end;
+While void variables are useless, void pointers are generic, meaning they can be assigned to any pointer; you can also cast other pointer types as void and the info will not be affected
+volatile- permits use of “memory-mapped variables”, which are variables that change based on the state of the hardware, such as a temperature value; help code run more efficiently rather than optimizing the best possible case
+constants- declared with const qualifies; must be assigned a value when declared
+constant expressions- string or numeric value put directly into C code; 
+What is the difference between constant and constant expression?
+#define MY_LONG1 23L; 	//Long value
+Declare hexadecimal with prefix 0x or octal with 0
+-Int my_hex_integer = 0xFF or int my_octal_integer = 077
+You can also print values with \x for hexadecimal or \ for octal
+struct and union- (Ch 20)
+typedef- this command allows you to define your own data types; the format is as follows:
+		typedef existing_type new_type; //ex. typedef int my_type
+Mostly used for renaming structures and unions, as their names can be long and tedious. Seldom do we rename existing data types to create our own type.
+**Ch 20 Data Structures**
+Data Structures- Manipulating becomes difficult if they are not organized together, which is why C groups data together using packages, or data structures
+struct- a type of data structure, that groups variables together under a common name; as opposed to arrays, it can contain different types of data and can even have arrays; variables under a struct are called “members”
+union- same as struct but only one at a time; it can be linked with a struct using lists and trees (complex data structures)
+Data structure is generically referring to patterns of data and groups, while struct is a specific C data type that groups variables together; a structs are data structures but not vice versa.
+
+Structure declarations:
+```c
+struct personal_data
+{
+	char name[100];
+	char address[200];
+	int year_of_birth;
+	int month_of_birth;
+}
+-Different structures can have members with the same name
+-Once declared, we can declare variables of this data type (struct personal_data person0001)
+-typedef can be used to declare it at the start of the program to make it easier to declare variables
+typedef struct{
+	variables….
+}personal_data
+```
+-Structures are powerful, they are parameters, values, and can be assigned to other structures; (structure_name.member_name) is used to call member values; also structs can be assigned to each other like person1 = person2 and the members will be passed over
+struct arrays- arrays are declared in the usual way, by adding [length] to the end of the variable declaration
+nested structures- basically we can put a structure type within another structure type
+Pointers to structures- structs can hold pointers pointing to themselves as well as other similar structs; invaluable for building linked lists and trees; 
+	Declaration: struct personal_data *my_struct_ptr;
+	(*my_struct_ptr).day_of_birth = 23;
+Another operator to use a pointer is using ‘->’ like so
+	my_struct_ptr->day_of_birth = 23;
+‘->’ allows direct access to the structs members
+Memory allocation- Most variables have a fixed size (static) but some will need to be dynamic with the program; size can vary on this data and is created through memory allocation using the malloc function and resized with realloc; the former takes one parameter the size, the latter takes two, pointer to the memory block and the new size; both return void; use free to free up any memory allocated
+For struct, we can use the sizeOf method to find the size needed for a struct
+union- struct where all members can be stored at the same address but only one member can move at a time; prevents fragmentation where it breaks up its memory into inefficiently sized chunks; creates standard size for all specific data
+Declaration of unions:
+```c
+union int_or_float{
+	int int_member;
+	float float_member;
+};	//Similar to struct
+//Remember, a union can only be one data type at a time
+//enums can be used to keep track of what data type is stored for each member
+enum which_number{
+	INT,
+	FLOAT,
+};	//Uppercase letters to prevent from causing an error by calling key words
+
+//A switch statement can be used to handle union members:
+union int_or_float my_union1;
+enum which_member my_union_status1;
+
+switch(my_union_status1){
+	case INT:
+		my_union1.int_member += 5;
+		break;
+	case FLOAT:..
+…
+}
+```
+Complex data structures- 
+**Kal 1.1-1.10**
+Structure: collection of one or more variables; contains various data types depeding on what the struct represents, such as a student or a bank account; allow more efficient organization of data
+
+```c
+//Declare a sturcture
+struct date {int day, month, year}; //or
+struct date {
+    int day, month, year
+};
+```
+
+We can picture the blocks as so:
+
+             day          month        year
+dob|                |                |                |
+
+To access the variables, we would use '.' with the class; %[reference type]
+
+***Note: #include <time.h> is a structure for time and date among other things
+
+typeded: give a name to an existing type; the name of this new defined type is synonymous with the type it is referenced to; we can use it especially to rename what structs are to make it easier to code/type in the program:
+```c
+//typedef examples
+typedef int Whole;    //Whole is now a new type that acts the same as an int
+Whole amount, copies;    //Declaring variables of type Whole, which is the same as declaring as type int
+//Ideally, this allows declaring structs much easier and cleaner, so when declaring structs, you can use typedef to make it cleaner everytime
+typedef struct date{
+    int day, month, year;
+}Date;
+Date borrowed, returned
+```
+
+struct arrays can be declared the same way as other arrays (ex. struct student[100])
+
+-***Note: when storing value, data, etc. for an array, be sure not to go out of bounds and store data in memory not within the array's bounds; this will cause an issue with the memory
+
+Searching an array of structs just requires you to use a for loop to find instances of the given argument
+
+Sorting an array by name example:
+```c
+void sort(Student list[], int n){
+//sort list[0] to list[n-1] by name using an insertion sort
+    Student templ
+    int k;
+    for(int h = 1; h < n; h++){
+        Student temp = list[h];
+        k = k - 1;
+        while(k >= - && strcmp(temp.name, list[k].name) < 0){
+            list[k + 1] = list[k];
+            k = k - 1;
+        }
+    }
+}//end sort
+```
+
+#include <string.h> -- Includes string functions such as .strcmp and .strcpy
+
+Nested Structs: Using a struct to be a part of the definiting of another struct; similar to inheritance
+```c
+//Using dob struct and new Student struct
+typedef struct{
+    char name[31];
+    Date dob;
+    char gender;
+}Student;
+```
+
+Fractions:
+
+**Ch 12 Preprocessor Drives**
+
+Preprocessor: Program examining and manipulating the C code before it is compiled; Two main uses. One is to included external files like header files; the other is to define macros, which are names that are expanded by the preprocessor into pieces of text or code
+
+preprocessor directives: usually headed by '#', as seen in the #include directive: other directives-
+    -#if... #endif: If expression between the two is true, it will compile; otherwise it will not; "conditional compilation"
+    -#else: compiles if the "if" directive does not compile
+    -#line: constant filename: causes comipler to act as though the next line is line number constant and is part of the file filename; debugging applications
+    -#error: forces compiler to abort: debugging applications
+```c
+//Ex. of conditional compilation
+#include<stdio.h>
+#define CHOICE 500
+
+int my_int = 0;
+#if(CHOICE == 500)
+void(set_my_int){my_int = 23}
+#else
+void set_my_int(){my_int = 17}
+#endif
+```
+    
+
+Macros: allow compression of code to make it easier to read, located and change; the above example, CHOICE, is an example of how it does not require a data type; CHOICE is treated synonymously as 500 (CHOICE++ is the same as 500++) we can also do something like #define SUM 1+2+3+4; they can be used anywhere except in between String qoutation marks; 
+
+Macro directives:
+    -#undef: undefines macro and frees the name
+    -#ifdef: similar to #if and works with #else; if the macro is defined then this directive will be true
+    -#ifndef: opposite of #ifdef meaning if the macro is not defined then the condition is true
+    
+Macros can take in parameters and return values; these are called macro functions and are created by defining a macro with a parameter; here is an example:
+```c
+#define ABS(my_val) ((my_val) < 0 ? -(my_val) : (my_val)
+```
+? ternary operator used to make sure it is positive no matter what (Absolute value macro functions)
+
+Macros, when used, are substituted whole when they're used and causes a lot of code repetition; however, speed is produced because control doesn't need to be passed to a new function because the Macro functions is already in the home functions; you trade length for speed; macro functions also cannot use function calls as parameters such as ABS(cos(36))
+
+**Ch 13 Libraries**
+
+Libraries: ready-compiled code that is merged by the compiler and links w/the C program; libraries can be linked but also must be included in the header, the glibc library is linked automatically but still must be referenced with stdio.h if used; To link a library in the terminal:
+    *** gcc -o program_name program_name.c -lm
+    
+Remember for libraries, link it with the '-l' option to the gcc and to include it in the header
+
+Header files: Once these are set, the libraries imported have claimed certain functions and macros that cannot be defined anywhere else and must be used for what the library intended it for; header files are wrapped in quotes ("name.h") while system directories are used like this (<name.h>)
+
+
+Kinds of Libraries: static and shared; static makes the entire libraries code merge with the object code which can make the .exe very large
+    Shared help reduce code size; stub code is the source of this and basically calls functions from the library and lets the OS take care of the rest; this helps reduce high memory usage; 
+    Static libraries are still useful, however, if a computer does not have the libraries on it;
+    
+Library file names start with lib and end with '.a' for static and '.so' for shared.
+
+
+
+    
+    
+
