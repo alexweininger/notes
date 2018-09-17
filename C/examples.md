@@ -2,6 +2,12 @@
 
 Examples showing the implementation of common C features in the form of small programs.
 
+<!-- TOC depthFrom:2 depthTo:2 -->
+
+- [Allocating and filling a 2d Array dynamically](#allocating-and-filling-a-2d-array-dynamically)
+
+<!-- /TOC -->
+
 ## Allocating and filling a 2d Array dynamically
 
 ### Code

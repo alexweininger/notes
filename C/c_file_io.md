@@ -1,9 +1,12 @@
-# 1. File I/O
+# File I/O
 
-- [1. File I/O](#1-file-io)
-    - [1.1. File writing](#11-file-writing)
-    - [1.2. File reading](#12-file-reading)
-    - [1.3. Summary](#13-summary)
+An introduction into file input and output in C.
+
+<!-- TOC -->
+
+- [1.1. File writing](#11-file-writing)
+- [1.2. File reading](#12-file-reading)
+- [1.3. Summary](#13-summary)
 
 <!-- /TOC -->
 
