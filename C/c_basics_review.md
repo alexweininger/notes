@@ -19,7 +19,7 @@
 - Identifying syntax errors
 - Good programming style
 
-### data types and thier sizes:
+### data types and thier sizes
 
 - int, 2 or 4 bytes
 - char, 1 byte
