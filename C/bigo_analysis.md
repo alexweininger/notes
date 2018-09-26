@@ -1,6 +1,6 @@
 # Big O Analysis
 
-Big-O for linear search is `O(n)`
+Big-O for linear search is `O(N)`
 
 ```c
 void function2 (int n) {
@@ -12,3 +12,11 @@ int i, j;
 	}
 }
 ```
+
+Big O for function 3 is `O(N^2)`
+
+`O(sqrt(N))`
+
+function 4
+
+`O(N^2)`
