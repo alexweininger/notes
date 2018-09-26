@@ -1,3 +1,5 @@
+# Chapter 1: Counting
+
 ## 1.2 Permutations and Combinations
 
 ### Definitions
