@@ -15,14 +15,3 @@ Before we dive deeper, take a look at these problems and exercises.  They may se
 2. Referring to the previous question, suppose after you select a ball you didn't put it back in the bag.  How many different possible sequenced of colors are there now?
 
 	As said before, we are choosing a ball from the bag 4 times.  Except this time the number of colors we have to choose from decreases after each selection.  So the answer is `4!` different sequences of colors.
-
-## 1.2 Permutations and Combinations
-
-### Definitions
-
-1. An arrangment of `n` objects is called a **permutation** of the objects. An arrandment of `r` objects out of a collection of `n` distinct objects (where `n >= r`) is called an **r-permutation of n objects**.  We use the notation P(n, r) to represent a permutation.  We read these as _n permute r_ or _n arrange r_.
-
-2. A collection of `r` objects taken from `n` distinct objects without regaurd to the order of the `r` objects is an **r-combination of the n objects**.  We is the notation C(n, r) for a combination.  We read this as _n choose r_.
-
-### Problems and Exercises
-
