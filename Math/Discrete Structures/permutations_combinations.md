@@ -8,4 +8,11 @@
 
 2. A collection of `r` objects taken from `n` distinct objects without regaurd to the order of the `r` objects is an **r-combination of the n objects**.  We is the notation C(n, r) for a combination.  We read this as _n choose r_.
 
+	You can write 
+
 ### Problems and Exercises
+
+1. How many arrangements of the letters in the word CATTLE have the two Ts appearing together either at the beginningor the end of the word?
+
+	`4! * 2`
+
