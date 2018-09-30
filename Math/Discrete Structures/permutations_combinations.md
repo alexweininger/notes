@@ -15,4 +15,3 @@
 1. How many arrangements of the letters in the word CATTLE have the two Ts appearing together either at the beginningor the end of the word?
 
 	`4! * 2`
-
