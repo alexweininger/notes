@@ -24,6 +24,7 @@
 	- [Table 1: Arrays and Linked Lists Pros and Cons](#table-1-arrays-and-linked-lists-pros-and-cons)
 - [Merging Two Sorted Linked Lists](#merging-two-sorted-linked-lists)
 	- [Program 5: Merging Two Sorted Linked Lists](#program-5-merging-two-sorted-linked-lists)
+- [Circular and Two-Way Linked Lists](#circular-and-two-way-linked-lists)
 
 <!-- /TOC -->
 
@@ -734,3 +735,5 @@ NodePtr merge(NodePtr A, NodePtr B) {
   return C;
 } //end merge
 ```
+
+## Circular and Two-Way Linked Lists
