@@ -9,6 +9,7 @@
 	- [Decoding](#decoding)
 - [Layouts](#layouts)
 - [Android](#android)
+- [Hash Tables (HashMaps)](#hash-tables-hashmaps)
 
 <!-- /TOC -->
 
@@ -125,3 +126,53 @@ topics
 - basic java, ArrayList
 
 - generics
+
+- spinner, radio buttons, findViewById(R.id.ID), OnDraw()
+
+## Hash Tables (HashMaps)
+
+HashTable refers to a specific type of data structure that stores key-value pairs.  In Java, HashTables are implemented as `HashMap`.
+
+You can declare a HashMap like so:
+
+`import java.util.HashMap<K,V>;`
+
+```java
+  HashMap<String, Integer> agesOfPeople = new HashMap<>();
+```
+
+K - the type of key in the map
+
+V - the type of mapped values
+
+You can add key-value pairs to a HashMap with the `put()` method:
+
+```java
+agesOfPeople.put("Alex", 19);
+agesOfPeople.put("Niraj", 12);
+```
+
+You can retrieve a value with the `get(Object key)` method.
+
+```java
+int a = agesOfPeople.get("Alex");
+// -> a = 19
+```
+
+Other important methods of HashMaps are:
+
+`boolean containsKey(Object key);`
+
+returns true if key exists in HashMap, false otherwise
+
+`boolean containsValue(Object value);`
+
+returns true if value exists in HashMap, false otherwise
+
+`Object remove(Object key);`
+
+removes the pair given key
+
+`int size()`
+
+returns the number of key-value pairs in the HashMap
