@@ -11,6 +11,13 @@
 - [Hash Tables (HashMaps)](#hash-tables-hashmaps)
 - [Layouts](#layouts)
 	- [SurfaceView and Canvas](#surfaceview-and-canvas)
+	- [Layouts and Views](#layouts-and-views)
+		- [LinearLayout](#linearlayout)
+		- [TextView](#textview)
+		- [Button](#button)
+		- [Spinner](#spinner)
+		- [RadioButton](#radiobutton)
+		- [SeekBar](#seekbar)
 
 <!-- /TOC -->
 
@@ -165,12 +172,6 @@ myButton.setOnClickListener(new onClickListener() {
 })
 ```
 
-- spinner
-
-- radio buttons
-
-- findViewById(R.id.ID)
-
 ### SurfaceView and Canvas
 
 SurfaceView can be extended to create a custom SurfaceView with a Canvas object we can draw on.
@@ -194,7 +195,7 @@ public class customSurfaceView extends SurfaceView {
   public void OnDraw(Canvas canvas) {
     // drawing goes in here
   }
-  
+
 }
 ```
 
@@ -210,8 +211,116 @@ redPaint.setStyle(Paint.Style.FILL);
 
 Then you can draw on the canvas using this paint with a method like this:
 
-`drawRect(float left, float top, float right, float bottom, Paint paint);`
+`canvas.drawRect(float left, float top, float right, float bottom, Paint paint);`
 
 ```java
 canvas.drawRect(100, 100, 200, 200, redPaint);
+```
+
+### Layouts and Views
+
+#### LinearLayout
+
+LinearLayout provides a container for holding Views.  A LinearLayout can be of two orientations, vertical or horizontal.
+
+You can specify orientation with `android: orientation="vertical/horizontal"`
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical" >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/to" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/subject" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="@string/message" />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:text="@string/send" />
+</LinearLayout>
+```
+
+#### TextView
+
+TextView is a simply displays a string.
+
+```xml
+   <TextView
+        android:id="@+id/label_g"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/green"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="@+id/label_r"
+        app:layout_constraintTop_toBottomOf="@+id/label_r" />
+```
+
+#### Button
+
+```java
+button.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View view) {
+		// code executed when button is clicked
+	}
+})
+```
+
+#### Spinner
+
+```java
+ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.data,
+	android.R.layout.simple_spinner_item);
+adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+spinner.setAdapter(adapter);
+
+spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+	@Override
+	public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+		adapterView.getItemSelectedPosition(); // get index of selected item
+		adapterView.getItemSelected();
+	} // primary
+	@Override
+	public void onNothingSelected(AdapterView<?> adapterView) {}
+})
+```
+
+#### RadioButton
+
+```java
+radioButtonGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+	@Override
+	public void onCheckChanged(RadioGroup radioGroup, int idChecked) {
+		if (idChecked == radioButton.getId()) {} // executed when radio button is checked/changed
+	}
+})
+```
+
+#### SeekBar
+
+```java
+seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+	@Override
+	public void onProgressChanged(SeekBar seekBar, int i, boolean b) {}
+	@Override
+	public void onStartTrackingTouch(SeekBar seekBar) {}
+	@Override
+	public void onStopTrackingTouch(SeekBar seekBar) {}
+})
 ```
