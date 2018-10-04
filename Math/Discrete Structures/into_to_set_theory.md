@@ -1,5 +1,7 @@
 # Intro to Set Theory
 
+## Definitions
+
 A **set** is a collection of objects called **elements**.
 
 A set containing no elements is called an **empty set**.
