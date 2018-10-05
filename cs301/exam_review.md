@@ -90,8 +90,6 @@ Because of this encoding, color integers can easily be described as an integer c
 
 To easily encode color integers, it is recommended to use the static methods argb(int, int, int, int) and rgb(int, int, int). The second method omits the alpha component and assumes the color is opaque (alpha is 255). As a convenience this class also offers methods to encode color integers from components defined in the range: `argb(float, float, float, float)` and `rgb(float, float, float)`.
 
-Color longs (defined below) can be easily converted to color ints by invoking the toArgb(long) method. This method performs a color space conversion if needed.
-
 It is also possible to create a color int by invoking the method toArgb() on a color instance.
 
 ### Decoding
@@ -123,7 +121,7 @@ You can declare a HashMap like so:
 `import java.util.HashMap<K,V>;`
 
 ```java
-  HashMap<String, Integer> agesOfPeople = new HashMap<>();
+ 
 ```
 
 K - the type of key in the map
@@ -133,32 +131,22 @@ V - the type of mapped values
 You can add key-value pairs to a HashMap with the `put()` method:
 
 ```java
+HashMap<String, Integer> agesOfPeople = new HashMap<>();
 agesOfPeople.put("Alex", 19);
-agesOfPeople.put("Niraj", 12);
-```
-
-You can retrieve a value with the `get(Object key)` method.
-
-```java
 int a = agesOfPeople.get("Alex");
-// -> a = 19
 ```
+
+`boolean containsKey(Object key);` returns true if key exists in HashMap, false otherwise
+
+`boolean containsValue(Object value);` returns true if value exists in HashMap, false otherwise
+
+`Object remove(Object key);` removes the pair given key
+
+`int size()` You can retrieve a value with the `get(Object key)` method.
 
 Other important methods of HashMaps are:
 
-`boolean containsKey(Object key);`
 
-returns true if key exists in HashMap, false otherwise
-
-`boolean containsValue(Object value);`
-
-returns true if value exists in HashMap, false otherwise
-
-`Object remove(Object key);`
-
-removes the pair given key
-
-`int size()`
 
 returns the number of key-value pairs in the HashMap
 
@@ -247,17 +235,7 @@ You can specify orientation with `android: orientation="vertical/horizontal"`
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/to" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:hint="@string/subject" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="top"
-        android:hint="@string/message" />
     <Button
         android:layout_width="100dp"
         android:layout_height="wrap_content"
