@@ -5,6 +5,7 @@
 - [Number Systems](#number-systems)
 	- [Binary](#binary)
 	- [Hexadecimal](#hexadecimal)
+	- [Converting Binary to Hexadecimal](#converting-binary-to-hexadecimal)
 	- [Android Colors](#android-colors)
 	- [Encoding](#encoding)
 	- [Decoding](#decoding)
@@ -64,6 +65,14 @@ C is the number 12, and since it is in the (sixteens column) we multiply 12 \* 1
 D is the number 13, and is in the 16^3 column, so we take 13 \* 16^3.
 
 Adding all the numbers up, `D1CE = 53710` in decimal.
+
+### Converting Binary to Hexadecimal
+
+To convert a value from binary to hexadecimal, you first add a number of 0's to the left of the most significant bit of the binary number, so the number of bits of the new binary number is a multiple of 4. Then, you simply translate each 4-bit binary nibble to its hexadecimal digit equivalent.
+
+For example, to convert to hex the binary number `1100100011`, we add two zeros to the left of the most significant bit:`0011 0010 0011`.
+
+Then we translate `0011 0010 0011` to `0x323`, as `0011` is `0x3` and `0010` is `0x2`.
 
 ### Android Colors
 
