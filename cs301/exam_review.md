@@ -78,6 +78,8 @@ Then we translate `0011 0010 0011` to `0x323`, as `0011` is `0x3` and `0010` is 
 
 Colors in Android are represented as sRGB with the 4 components packed into a 32-bit integer value.
 
+The format is either `#RRGGBB` or `#AARRGGBB`, where `AA` is the hex alpha value. `FF` would be fully opaque and `00` would be full transparent. `RR` is the hex red value.
+
 ### Encoding
 
 The four components of a color int are encoded in the following way:
