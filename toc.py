@@ -51,16 +51,16 @@ def replace_toc(file_path, toc, toc_start, toc_end):
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--readme", help="Searches and replaces the lines between toc-start and toc-end in the given file and prints the output. If not given, the script just prints the TOC generated.")
-parser.add_argument("--target", help="Target folder to create TOC for.", default=".");
-parser.add_argument("--exclude", help="List of folder and file names to exclude.", default=['.git', '.idea'], type=str, nargs='+');
-parser.add_argument("--toc-start", help="Start of the TOC.", default="[//]: # (TOCSTART)");
-parser.add_argument("--toc-end", help="End of the TOC.", default="[//]: # (TOCEND)");
+parser.add_argument("--target", help="Target folder to create TOC for.", default=".")
+parser.add_argument("--exclude", help="List of folder and file names to exclude.", default=['.git', '.idea'], type=str, nargs='+')
+parser.add_argument("--toc-start", help="Start of the TOC.", default="[//]: # (TOCSTART)")
+parser.add_argument("--toc-end", help="End of the TOC.", default="[//]: # (TOCEND)")
 args = parser.parse_args()
 
-result = "\n".join(walk_directory(args.target, args.exclude));
+result = "\n".join(walk_directory(args.target, args.exclude))
 
 if args.readme == None:
-    sys.stdout.write(result);
+    sys.stdout.write(result)
 else:
-    sys.stdout.write(replace_toc(args.readme, result, args.toc_start, args.toc_end));
+    sys.stdout.write(replace_toc(args.readme, result, args.toc_start, args.toc_end))
 sys.stdout.flush();
