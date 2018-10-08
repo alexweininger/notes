@@ -19,6 +19,7 @@
 		- [Spinner](#spinner)
 		- [RadioButton](#radiobutton)
 		- [SeekBar](#seekbar)
+- [Post Exam Notes](#post-exam-notes)
 
 <!-- /TOC -->
 
@@ -313,3 +314,56 @@ seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 	public void onStopTrackingTouch(SeekBar seekBar) {}
 })
 ```
+
+## Post Exam Notes
+
+`Apple -> Pear ->Grape`
+
+```java
+public class Apple {
+	protected int core = 3;
+
+	public Apple (int x) {
+		core = x + 1;
+	}
+
+	public String eat() {
+		return "c: " + core;
+	}
+}
+
+public class Pear extends Apple {
+	public Pear (int x) {
+		super (5);
+	}
+}
+
+public class Grape extends Apple {
+	public Grape (int y) {
+		super(y);
+		core = 0;
+	}
+
+	public String eat() {
+		return "p: " + core;
+	}
+}
+```
+
+Consider the following code
+
+```java
+Apple a1 = new Apple(5);
+Apple a2 = new Pear(10);
+Apple a3 = new Grape(20);
+System.out.println(a1.eat());
+System.out.println(a2.eat());
+System.out.println(a3.eat());
+
+/* Prints:
+ * c: 6
+ * c: 6
+ * p: 0
+ */
+```
+
