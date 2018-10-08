@@ -20,6 +20,8 @@
 		- [RadioButton](#radiobutton)
 		- [SeekBar](#seekbar)
 - [Post Exam Notes](#post-exam-notes)
+	- [Inheritance](#inheritance)
+	- [Use cases](#use-cases)
 
 <!-- /TOC -->
 
@@ -122,14 +124,14 @@ You can declare a HashMap like so:
 `import java.util.HashMap<K,V>;`
 
 ```java
- 
+HashMap<String, Integer> agesOfPeople = new HashMap<String, Integer>;
 ```
 
 K - the type of key in the map
 
 V - the type of mapped values
 
-You can add key-value pairs to a HashMap with the `put()` method:
+You can add key-value pairs to a HashMap with the `put()` method. And can retrieve a value with the `get(Object key)` method.
 
 ```java
 HashMap<String, Integer> agesOfPeople = new HashMap<>();
@@ -143,13 +145,9 @@ int a = agesOfPeople.get("Alex");
 
 `Object remove(Object key);` removes the pair given key
 
-`int size()` You can retrieve a value with the `get(Object key)` method.
+`int size()` returns the number of key-value pairs in the HashMap
 
-Other important methods of HashMaps are:
-
-
-
-returns the number of key-value pairs in the HashMap
+**Note: if a key already exists in the HashMap, and you call put(key, value), it will replace the value that is already paired with that key in the HashMap.**
 
 ## Layouts
 
@@ -317,6 +315,8 @@ seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
 ## Post Exam Notes
 
+### Inheritance
+
 `Apple -> Pear ->Grape`
 
 ```java
@@ -366,4 +366,20 @@ System.out.println(a3.eat());
  * p: 0
  */
 ```
+
+### Use cases
+
+Primary actor:
+
+Preconditions:
+
+Trigger:
+
+Description:
+
+Story:
+
+Preconditions:
+
+Exceptions/alternatives:
 
