@@ -22,6 +22,7 @@
 - [Post Exam Notes](#post-exam-notes)
 	- [Inheritance](#inheritance)
 	- [Use cases](#use-cases)
+- [Android API notes](#android-api-notes)
 
 <!-- /TOC -->
 
@@ -219,7 +220,7 @@ canvas.drawRect(100, 100, 200, 200, redPaint);
 
 #### LinearLayout
 
-LinearLayout provides a container for holding Views.  A LinearLayout can be of two orientations, vertical or horizontal.
+LinearLayout provides a container for holding Views. A LinearLayout can be of two orientations, vertical or horizontal.
 
 You can specify orientation with `android: orientation="vertical/horizontal"`
 
@@ -382,4 +383,36 @@ Story:
 Preconditions:
 
 Exceptions/alternatives:
+
+## Android API notes
+
+```java
+public class MainActivity extends AppCompatActivity {
+	@Override
+	protected void onCreate() {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		// important lines
+		Button b = (Button) findViewById(R.id.zeButton); // id given from xml
+		MySV sv = (MySC) findViewById(R.id.thing); // id given from xml
+		SVHandler svh = new SVHandler(sv);
+		b.setOnClickListener(svh);
+	}
+}
+
+public class SVHandler implements View.OnClickHandler { // ***
+	MySV theSV = null;
+
+	public SVHandler(MySV sv) {
+		theSV = sv;
+	}
+
+	@Override
+	public void onClick(View v) {
+		theSV.flip(); // ***
+		theSV.invalidate(); // ***
+	}
+}
+```
 
