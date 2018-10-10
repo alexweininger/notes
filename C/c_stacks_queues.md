@@ -1,12 +1,112 @@
-# Stacks and Queues
+# Stacks
 
-An abstract data type is one that allows a user to manipulate the data without knowledge of how the data structure is implemented.
-
-## Stacks
+An abstract data type is one that allows a user to manipulate the data without knowledge of how the data structure is implemented. For more information look up the definition of abstract in programming.
 
 A **stack** is a linear list in which items are added at one end and deleted from the same end.
 
 This idea can be illustrated by a stack of plates, when a plate is needed it is taken from the top of the stack. When a plate is washed it is added at the top of the stack. Exhibiting a **last in, first out** property.
+
+## Terminology
+
+When adding an item to a stack it is called **pushing** an item to the stack.
+
+When retrieving an item from a stack we call is **popping** an item from the stack.
+
+Another handy operation is checking if the stack is **empty**. This will need to be done before popping items from the stack.
+
+## Implementing a Stack Using an Array
+
+For the array implementation of a stack of integers, we have an `int ST[MaxStack]` for storing the integer.
+And we have `int top` for storing the index of the element at the top of the stack. 
+We need `int top` because when items are added to the stack they will be added to the first open space in the array.
+
+```c
+typedef struct {
+	int top;
+	int ST[MaxStack];
+} StackType, *Stack;
+```
+
+`Stack s;`
+
+The first operation is to create an empty stack, which can be done like so:
+
+```c
+Stack initStack () {
+	Stack sp = (stack) malloc(sizeof(StackType));
+	sp -> top = -1;
+	return sp;
+}
+```
+
+In `main` we could write the following
+
+`Stack s = initStack();`
+
+It's simple to check if a stack is empty.
+
+```c
+int empty(Stack s) {
+	return (S -> top == -1);
+}
+```
+
+### Push
+
+```c
+void push(Stack s, int n) {
+	if (s->top == MaxStack - 1) {
+		printf("Error: max overflow");
+		exit(1);
+	}
+	++(s->top);
+	s->ST[s->top] = n
+}
+```
+
+### Pop
+
+```c
+int pop (Stack s) {
+	if(empty(s)) {
+		printf("Error: empty");
+		return -1;
+	}
+	int hold = s->ST[s->top];
+	--(s->top);
+	return hold;
+}
+```
+
+
+
+## Implementing a Stack Using a Linked List
+
+An array implementation is simple and efficient, however it needs a static size. Linked lists can be used since storage for an element is used only when needed.
+
+Here are the declarations:
+
+```c
+typedef struct node {
+	int top;
+	int ST[MaxStack];
+} Node, *NodePtr;
+
+typedef struct {
+	NodePtr top;
+	int ST[MaxStack];
+} StackType, *Stack;
+```
+
+Stack can be pictured as a pointer to top, and top is a pointer to the linked list of stack elements.
+
+```c
+Stack initStack() {
+	Stack sp = (Stack) malloc(sizeof(StackType));
+	sp -> top = NULL;
+	return sp;
+}
+```
 
 ## Notes from lecture
 
