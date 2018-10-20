@@ -271,7 +271,7 @@ int binarySearch(int value, int list[], int firstIndex, int lastIndex) {
 
 You want to find the number 41 in the following sorted array. Using binary search from lecture, what are the recursive calls that are made if the array contains the following integers:
 
-![array](./assets/binsearch.png)
+![array](./assets/binsearch.PNG)
 
 `binarySearch(int firstIndex, int lastIndex);`
 
