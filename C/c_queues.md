@@ -41,3 +41,35 @@ int empty(Queue Q) {
 }
 ```
 
+### Enqueue and dequeue for a Queue implemented with an Array
+
+Since tail cannot be greater than `MaxQ - 1`, and we may have extra room at the head of the queue made by dequeueing, we can _wrap_ tail around by setting tail to 0.
+
+```c
+void enqueue(Queue Q, int n) {
+	if(Q -> tail == MaxQ - 1) Q -> tail = 0; // wrap tail
+	else ++(Q -> tail);
+	if(Q -> head == Q -> tail) { // if the wrapped tail has reached head
+ 		printf("Error: queue is full");
+		return -1;
+	}
+	Q -> QA[Q -> tail] = n;
+}
+```
+
+After dequeuing all items from a queue, `head` would have reached `tail` and the queue would be empty.
+In this case, we want to set `head` to _make room_ for more items.
+
+```c
+int dequeue(Queue Q) {
+	if(empty(Q)) {
+		printf("Error: queue empty");
+		return -1;
+	}
+	if(Q -> head == MaxQ - 1) Q -> head = 0;
+	else ++(Q -> head);
+	return Q -> QA[Q -> head];
+}
+```
+
+[http://cslibrary.stanford.edu/105/LinkedListProblems.pdf](http://cslibrary.stanford.edu/105/LinkedListProblems.pdf)

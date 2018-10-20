@@ -1,6 +1,7 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct node {
   char ch;
@@ -8,6 +9,7 @@ typedef struct node {
 } Node, *NodePtr;
 
 int main() {
+
   NodePtr getPhrase();
   NodePtr reverseLetters(NodePtr);
   int compare(NodePtr, NodePtr);
@@ -15,6 +17,7 @@ int main() {
 
   printf("Type a phrase. (To stop, press 'Enter' only): ");
   phrase = getPhrase();
+
   while (phrase != NULL) {
     s1 = reverseLetters(phrase);
     s2 = reverseLetters(s1);
@@ -25,6 +28,26 @@ int main() {
     printf("Type a word. (To stop, press 'Enter' only): ");
     phrase = getPhrase();
   }
+}
+
+int isPalRec(char str[], int s, int e) {
+  // If there is only one character
+  if (s == e)
+    return 1;
+
+  // If first and last
+  // characters do not match
+  if (str[s] != str[e])
+    return 0;
+
+  // If there are more than
+  // two characters, check if
+  // middle substring is also
+  // palindrome or not.
+  if (s < e + 1)
+    return isPalRec(str, s + 1, e - 1);
+
+  return 1;
 }
 
 NodePtr getPhrase() {
@@ -78,4 +101,3 @@ NodePtr createNode(char c) {
   np->next = NULL;
   return np;
 }
-

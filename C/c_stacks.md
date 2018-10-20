@@ -149,7 +149,9 @@ int pop(Stack s) {
 
 So far we have worked with stacks of integers. Let's implement a stack that would work for any data type.
 
+```c
 
+```
 
 ## Notes from lecture
 
@@ -183,3 +185,5 @@ main -> f -> g -> h
 So, the information for main is on the stack, then the info for f is pushed to the stack, then info for g is pushed to the stack, then info for h is pushed to the stack.
 When h returns, the info for h is popped, then g calls k so info for k is pushed. When k returns, info for k is popped. When g returns, info for g is popped. When f returns, info for f is popped.
 When main returns, info for main is popped.
+
+[http://cslibrary.stanford.edu/105/LinkedListProblems.pdf](http://cslibrary.stanford.edu/105/LinkedListProblems.pdf)
