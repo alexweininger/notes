@@ -85,7 +85,7 @@ in order from smallest to largest
 - `O(2^n)`
 - `O(n!)`
 
-![big O graph](./assets/bigo_graph.png)
+![big O graph](./assets/bigo_graph.PNG)
 
 ![chart](./assets/2018-10-16-18-40-27.png)
 
