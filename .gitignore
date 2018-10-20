@@ -1,3 +1,9 @@
 .vscode/settings.json
 ./*.o
 ./*.out
+C/programs/a.out
+C/programs/sieve_
+C/programs/binary_search.o
+C/programs/*.out
+C/programs/*.o
+C/programs/bs
