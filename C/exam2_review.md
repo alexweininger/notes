@@ -209,6 +209,8 @@ void function7(int n) {
 }
 ```
 
+Answers:
+
 **function1 complexity: `O(n^3)`**
 
 **function2 complexity: `O(sqrt n)`**
