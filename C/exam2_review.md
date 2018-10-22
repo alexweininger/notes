@@ -21,6 +21,7 @@
 - [Linked lists](#linked-lists)
 	- [Linked list operations](#linked-list-operations)
 		- [Print linked list](#print-linked-list)
+	- [Print and Free linked list](#print-and-free-linked-list)
 - [Stacks](#stacks)
 - [Queues](#queues)
 
@@ -74,17 +75,48 @@ Helpful resources
 
 - Awesome big-O website and cheat sheet. <http://bigocheatsheet.com/>
 
+- Helpful explanations and examples of common Big O complexities. <http://cooervo.github.io/Algorithms-DataStructures-BigONotation/big-O-notation.html>
+
 ### Common complexities
 
 in order from smallest to largest
 
 - `O(1)`
+  - linked list insertion/deletion
+  - array access
 - `O(log n)`
+  - binary search
 - `O(n)`
+  - single iteration
 - `O(n log n)`
+  - heapsort
+  - merge sort
+  - Quick sort
 - `O(n^2)`
+  - insertion sort
 - `O(2^n)`
+  - recursion: towers of Hanoi
 - `O(n!)`
+
+O(log n)
+
+```c
+int i;
+for(i=0; i*i < n; i++) {
+  //do something in constant time...
+}
+```
+
+O(n log n)
+
+```c
+int i, j;
+for (i = 0; i < n; i++) {      // linear loop  O(n) * ...
+  for (j = 1; j*j < n; j++) {  // ...log (n)
+    // do something in constant time...
+  }
+}
+```
 
 ![big O graph](./assets/bigo_graph.PNG)
 
@@ -172,8 +204,6 @@ void function7(int n) {
     }
   }
 }
-
-
 ```
 
 **function1 complexity: `O(n^4)`**
@@ -550,6 +580,19 @@ struct nodeTag {
 #### Print linked list
 
 length, reverse, copy, merge, merge sort, insert, insert head, insert tail
+
+### Print and Free linked list
+
+```c
+void printAndFree(Node *top) {
+  while (NULL != top) {       // iterate through list
+    printf("%d\n", top->num); // print num
+    Node *temp = top;         // make temp of top
+    top = top->next;          // advance top
+    free(temp);               // free top (temp)
+  }
+}
+```
 
 ## Stacks
 

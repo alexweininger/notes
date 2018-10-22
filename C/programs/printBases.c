@@ -16,16 +16,32 @@ void main(int argc, char argv[]) {
   }
 }
 
-void printNumInBase(int base, int num) {
+void printNumInBase(int base, int n) {
   char digits[] = "0123456789ABCDEFGHIJKLMOPQRSTUVWXYZ";
-  // if negative print "-" and call printNUm again, but with positive num
-  if (num < 0) {
+  // if negative
+  if (n < 0) {
     printf("-");
-    printNumInBase(base, -1 * num);
-  } else if (base > num) { // base case
-    printf("%c", digits[num]);
-  } else { // recursive case
-    printNumInBase(base, (num / base));
-    printNumInBase(base, (num % base));
+    printNumInBase(base, -1 * n);
+  } else if (n < base) {
+    printf("%c", digits[n]);
+  } else {
+    printNumInBase(base, n / base);
+    printNumInBase(base, n % base);
   }
 }
+
+
+
+// void printNumInBase(int base, int num) {
+//   char digits[] = "0123456789ABCDEFGHIJKLMOPQRSTUVWXYZ";
+//   // if negative print "-" and call printNUm again, but with positive num
+//   if (num < 0) {
+//     printf("-");
+//     printNumInBase(base, -1 * num);
+//   } else if (base > num) { // base case
+//     printf("%c", digits[num]);
+//   } else { // recursive case
+//     printNumInBase(base, (num / base));
+//     printNumInBase(base, (num % base));
+//   }
+// }
