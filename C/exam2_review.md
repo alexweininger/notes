@@ -13,6 +13,7 @@
 - [Prime numbers](#prime-numbers)
 	- [Sieve of Eratosthenes](#sieve-of-eratosthenes)
 - [Recursion](#recursion)
+	- [Sum digits](#sum-digits)
 	- [Palindrome](#palindrome)
 	- [GCD](#gcd)
 	- [Multiplication with the Russian Peasant Algorithm](#multiplication-with-the-russian-peasant-algorithm)
@@ -371,6 +372,23 @@ void sieve(int n) {
 ## Recursion
 
 Recursion is the concept of a function calling itself. Recursion although hard, can be useful and necessary to solve certain problems.
+
+### Sum digits
+
+This problem is part of the review document.
+
+Write a recursive method that sums all of the integers up to and including n.
+
+So for n = 5. Return 1 + 2 + 3 + 5.
+
+```c
+int sumDigits(int n) {
+  if (n == 0) // base case
+    return 0;
+  else // recursive case
+    return sumDigits(n - 1) + n;
+}
+```
 
 ### Palindrome
 
