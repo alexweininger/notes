@@ -137,7 +137,7 @@ _Graph and chart from <http://bigocheatsheet.com/>_
 
 **Answers:**
 
-1. `O(n^5)`
+1. `O(n^3)`
 2. `O(n^2.5)`
 3. `O(n^5)`
 4. `O(2^n)`
@@ -626,6 +626,34 @@ void printAndFreeR(Node * top) {
 Stacks are a last-in first-out linear list. Meaning that the most recent item pushed onto the stack, will be the next item popped from the stack.
 
 Items are pushed onto the top of the stack. And popped from the top of the stack as well.
+
+```c
+int main(void) {
+  Stack s = initStack();
+  push(s, 3);
+  push(s, 15);
+  push(s, 10);
+  push(s, 8);
+  pop(s);
+  // A: What is s’s contents?
+  push(s, 12);
+  push(s, 2);
+  pop(s);
+  push(s, 7);
+  // B: What is s’s contents?
+  pop(s);
+  pop(s);
+  push(s, 4);
+  // C: What is s’s contents?
+  freeStack(s);
+}
+```
+
+A: bottom - 3, 15, 10 - top
+
+B: bottom - 3, 15, 10, 12, 7 - top
+
+C: bottom - 3, 15, 10, 4 - top
 
 ## Queues
 
