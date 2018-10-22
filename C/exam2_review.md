@@ -11,7 +11,6 @@
 	- [Practice Questions](#practice-questions)
 - [Binary search](#binary-search)
 	- [Practice Questions](#practice-questions-1)
-- [Prime numbers](#prime-numbers)
 	- [Sieve of Eratosthenes](#sieve-of-eratosthenes)
 - [Recursion](#recursion)
 	- [Sum digits](#sum-digits)
@@ -24,7 +23,10 @@
 		- [Print linked list](#print-linked-list)
 	- [Print and Free linked list](#print-and-free-linked-list)
 - [Stacks](#stacks)
+	- [Stack operations](#stack-operations)
 - [Queues](#queues)
+	- [Queue operations](#queue-operations)
+	- [Queue practice questions](#queue-practice-questions)
 
 <!-- /TOC -->
 
@@ -207,7 +209,7 @@ void function7(int n) {
 }
 ```
 
-**function1 complexity: `O(n^4)`**
+**function1 complexity: `O(n^3)`**
 
 **function2 complexity: `O(sqrt n)`**
 
@@ -337,7 +339,7 @@ recursive calls:
 3. `binarySearch(0, 1);`
 4. `binarySearch(1, 1);`
 
-## Prime numbers
+Practice
 
 Finding prime numbers is a common programming situation and can be approached in many different ways.
 
@@ -627,6 +629,19 @@ Stacks are a last-in first-out linear list. Meaning that the most recent item pu
 
 Items are pushed onto the top of the stack. And popped from the top of the stack as well.
 
+### Stack operations
+
+- pop
+- push
+- peek
+- isEmpty
+- isFull
+- initialize
+
+Practice
+
+Here are some example operations on a stack.
+
 ```c
 int main(void) {
   Stack s = initStack();
@@ -658,6 +673,16 @@ C: bottom - 3, 15, 10, 4 - top
 ## Queues
 
 Different from stacks, queues are last-in first-out. Meaning that the item queued before the other items will be the next item dequeued. Just how a line of people works at the grocery store.
+
+### Queue operations
+
+- enqueue
+- dequeue
+- isEmpty
+- isFull
+- initialize
+
+### Queue practice questions
 
 ```c
 int main(void) {
