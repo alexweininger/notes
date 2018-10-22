@@ -25,6 +25,8 @@ Node *copy(Node *);
 Node *doubleCopy(Node *);
 int count(Node *, int);
 Node * getNthNode(Node *, int);
+void printAndFreeR(Node * top);
+void printAndFree(Node * top);
 
 int main(int argc, char const *argv[]) {
   Node *top = NULL;
@@ -49,6 +51,7 @@ int main(int argc, char const *argv[]) {
   print(list3);
   printf("count 10s: %d\n", count(top, 10));
   printf("get nth: 2 = %d\n", (getNthNode(top, 2)->num));
+  printAndFreeR(top);
   return 0;
 }
 
@@ -175,6 +178,16 @@ void printAndFree(Node *top) {
     top = top->next;          // advance top
     free(temp);               // free top (temp)
   }
+}
+
+void printAndFreeR(Node * top) {
+  // base case list == null
+  if (top == NULL) {
+    return;
+  }
+  printf("%d\n", top->num);
+  printAndFree(top->next);
+  free(top);
 }
 
 // returns how many times n occurs in linked list

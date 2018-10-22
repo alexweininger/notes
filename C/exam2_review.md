@@ -8,8 +8,9 @@
 	- [Common complexities](#common-complexities)
 	- [Practice questions](#practice-questions)
 - [Linear search](#linear-search)
-- [Binary search](#binary-search)
 	- [Practice Questions](#practice-questions)
+- [Binary search](#binary-search)
+	- [Practice Questions](#practice-questions-1)
 - [Prime numbers](#prime-numbers)
 	- [Sieve of Eratosthenes](#sieve-of-eratosthenes)
 - [Recursion](#recursion)
@@ -268,6 +269,16 @@ int linearSearch(int value, int list[], int len) {
 	return -1;
 }
 ```
+
+### Practice Questions
+
+Assume linear search for the number 41 is performed on the following array.
+
+![array](./assets/binsearch.PNG)
+
+How many numbers does linear search examine before returning?
+
+****
 
 ## Binary search
 
@@ -583,6 +594,8 @@ length, reverse, copy, merge, merge sort, insert, insert head, insert tail
 
 ### Print and Free linked list
 
+Iterative:
+
 ```c
 void printAndFree(Node *top) {
   while (NULL != top) {       // iterate through list
@@ -591,6 +604,20 @@ void printAndFree(Node *top) {
     top = top->next;          // advance top
     free(temp);               // free top (temp)
   }
+}
+```
+
+Recursive:
+
+```c
+void printAndFreeR(Node * top) {
+  // base case list == null
+  if (top == NULL) {
+    return;
+  }
+  printf("%d\n", top->num);
+  printAndFree(top->next);
+  free(top);
 }
 ```
 
