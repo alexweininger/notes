@@ -213,9 +213,9 @@ Answers:
 
 **function1 complexity: `O(n^3)`**
 
-**function2 complexity: `O(sqrt n)`**
+**function2 complexity: `O(sqrt n) or O(n^0.5)`**
 
-**function3 complexity: `O(n^2)`**
+**function3 complexity: `O(n log n)`**
 
 **function4 complexity: `O(n)`**
 
