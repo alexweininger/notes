@@ -430,8 +430,7 @@ So for n = 5. Return 1 + 2 + 3 + 5.
 int sumDigits(int n) {
   if (n == 0) // base case
     return 0;
-  else // recursive case
-    return sumDigits(n - 1) + n;
+  return sumDigits(n - 1) + n; // recursive case
 }
 ```
 
