@@ -48,3 +48,17 @@ int main(int argc, char *argv[]) {
   }
   return EXIT_SUCCESS;
 }
+
+for (i = 2; i <= max; i++) {
+  bool found_prime = true;
+  for (j = 2; j * j <= i; j++) {
+    if (i % j == 0) {
+      // found divisor
+      found_prime = false;
+      break;
+    }
+  }
+  // print it to the screen if prime
+  if (found_prime) {
+    printf("%d\n", i);
+  }

@@ -39,7 +39,6 @@ int main(int argc, char *argv[]) {
   for (i = 0; i < len; i++) {
     hits[i] = false;
   }
-
   // go through array until at sqrt(len)
   // mark off multiples of primes
   for (i = 2; i * i <= len; i++) {

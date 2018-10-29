@@ -4,9 +4,7 @@
 
 // Recursive function to return gcd of a and b
 int gcd(int a, int b) {
-  printf("a: %d, b: %d\n", a, b);
-  if (b == 0)
-    return a;
+  if (b == 0) return a;
   return gcd(b, a % b);
 }
 

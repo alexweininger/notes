@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-	printf("%d\n", peasant(6, 10));
+	printf("%d\n", peasant(5, 10));
 }
 
 int peasant(int a, int b) {

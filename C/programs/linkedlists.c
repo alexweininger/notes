@@ -24,18 +24,23 @@ int length(Node *);
 Node *copy(Node *);
 Node *doubleCopy(Node *);
 int count(Node *, int);
-Node * getNthNode(Node *, int);
-void printAndFreeR(Node * top);
-void printAndFree(Node * top);
+int countR(Node *, int);
+Node *getNthNode(Node *, int);
+void printAndFreeR(Node *top);
+void printAndFree(Node *top);
+void printReversed(Node *top);
 
 int main(int argc, char const *argv[]) {
   Node *top = NULL;
   top = makeNode(6, top);
   top = makeNode(10, top);
+  top = makeNode(10, top);
+  top = makeNode(10, top);
   top = makeNode(-3, top);
   top = makeNode(2, top);
   printf("length: %d\n", length(top));
   print(top);
+  printReversed(top);
   insertTail(12, &top);
   print(top);
   printf("reversed:\n");
@@ -49,8 +54,11 @@ int main(int argc, char const *argv[]) {
   Node *list3 = NULL;
   list3 = doubleCopy(top);
   print(list3);
-  printf("count 10s: %d\n", count(top, 10));
+  printf("Printed in reverse:\n");
+
+  printf("count 10s: %d\n", countR(top, 10));
   printf("get nth: 2 = %d\n", (getNthNode(top, 2)->num));
+
   printAndFreeR(top);
   return 0;
 }
@@ -180,7 +188,7 @@ void printAndFree(Node *top) {
   }
 }
 
-void printAndFreeR(Node * top) {
+void printAndFreeR(Node *top) {
   // base case list == null
   if (top == NULL) {
     return;
@@ -203,9 +211,25 @@ int count(Node *top, int n) {
 
 Node *getNthNode(Node *top, int n) {
   int i = 0;
-  while(NULL != top && i < n) {
+  while (NULL != top && i < n) {
     top = top->next;
     i++;
   }
   return top;
+}
+
+int countR(Node *top, int n) {
+  if (top == NULL)
+    return 0;
+  if (top->num == n)
+    return count(top->next, n) + 1;
+  else
+    return count(top->next, n);
+}
+
+void printReversed(Node *top) {
+  if (top == NULL)
+    return;
+  printReversed(top->next);
+  printf("%d\n", top->num);
 }
