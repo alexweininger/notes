@@ -65,3 +65,16 @@ Test case:
 - env needs
 - special procedural requirements
 - intercase dependencies
+
+Test case for Settlers of Catan
+
+- Resource management
+- Testing the methods for storage and add/remove resource cards from players inventory.
+- pre-conditions
+	- have enough resources to remove
+- input specification
+	- (call removeResourceCard method) build a city/settlement
+- output (removed n resourceCards from players inventory)
+- environment: game is started...
+- special procedural req.
+- inter case dependencies
