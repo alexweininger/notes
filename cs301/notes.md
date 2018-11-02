@@ -78,3 +78,14 @@ Test case for Settlers of Catan
 - environment: game is started...
 - special procedural req.
 - inter case dependencies
+
+## Assert
+
+alert and potentially stop execution of the program based on a variable value
+
+```java
+	@Test
+	public void addition_isCorrect() {
+		assertEquals(4, 2);
+	}
+```
