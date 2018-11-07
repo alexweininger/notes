@@ -64,7 +64,7 @@ Test case:
 - output spec
 - env needs
 - special procedural requirements
-- intercase dependencies
+- inter case dependencies
 
 Test case for Settlers of Catan
 
@@ -88,4 +88,25 @@ alert and potentially stop execution of the program based on a variable value
 	public void addition_isCorrect() {
 		assertEquals(4, 2);
 	}
+
+	// radius, x, y, and color
+	public void testSpotConstructor() {
+		Spot testSpot = new Spot();
+
+		assertEquals(20, testSpot.getSize());
+	}
 ```
+
+`assertEquals(factorial(1), 1);`
+
+## Parallelism
+
+Threads: 1 channel of program execution
+
+They dont run at the same time, but they switch off. But it is so fast it really doesnt matter.
+
+Fast responsive computer
+
+Example:
+
+video				button press
