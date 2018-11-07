@@ -138,5 +138,18 @@ Issues with threads:
   - `final int LENGTH = 100;`
   - all threads can use `LENGTH`
   - no race here
--
+  - final is safe, because data races cant happen on it
 - debugging:
+- tons of possible values for just a simple program
+- which one is correct
+
+The **runnable** interface is proffered to sub classing Thread
+
+```java
+implements Runnable // stuff todo
+
+@Override public void run() // stuff todo
+
+Thread myThread = new Thread(runnableObject);
+myThread.start(); // please run this as a thread
+```
