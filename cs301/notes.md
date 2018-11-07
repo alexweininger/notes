@@ -103,10 +103,40 @@ alert and potentially stop execution of the program based on a variable value
 
 Threads: 1 channel of program execution
 
-They dont run at the same time, but they switch off. But it is so fast it really doesnt matter.
+They don't run at the same time, but they switch off. But it is so fast it really doesn't matter.
 
 Fast responsive computer
 
 Example:
 
 video				button press
+frame 1
+frame 2
+...
+frame 4000			tap!      onclick
+						if (button == etc.)
+							videoplayer.pause();
+
+no more frames
+rendered pause
+
+parallelism: same thing happening
+
+concurrency: different things happening at once. Looping an array while also playing music, etc.
+
+Benefits of using threads:
+
+- responsiveness
+- Increased performance (speed/throughput)
+- need to do more than one things **concurrently**
+
+Issues with threads:
+
+- complexity (programmer difficulty)
+- difficult to debug
+- data race: same / shared data used by two or more threads. If race winner determines data outcome, then we have a race.
+  - `final int LENGTH = 100;`
+  - all threads can use `LENGTH`
+  - no race here
+-
+- debugging:
