@@ -153,3 +153,32 @@ implements Runnable // stuff todo
 Thread myThread = new Thread(runnableObject);
 myThread.start(); // please run this as a thread
 ```
+
+Synchronization:
+
+```java
+if (x > 1) {
+	x--;
+}
+```
+
+At the end i is one less, if there is only 1 thread. If there is more than one thread behavior may be weird.
+
+```java
+if (x > 1) {
+	x--;
+}
+```
+
+If it spreads this code across 3 threads, and evaluates all of the if statements and then all of the rest of the code it will subtract 3 from x after all of the if statements are completed.
+
+```java
+public Object getElement(ArrayList<String> v) {
+	synchronized(v) {
+		if (v.isEmpty()) return null;
+		String rtnVal = v.elementAt(0);
+		v.removeElementAt(0);
+		return rtnVal;
+	}
+}
+```
