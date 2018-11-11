@@ -94,3 +94,21 @@ typedef struct {
 ```
 
 ### Building a Binary Tree
+
+
+### Binary Tree Deletion
+
+The three cases to consider when deleting a node from a binary tree are as follows.
+
+1. The node is a leaf (has no children).
+2. The node has no left child.
+3. The node has no right child.
+4. The node has two children.
+
+Case 1 is simple since all we need to do is set its parent link to null.
+
+Case 2 is pretty simple as well since we can just replace the node with its only child.
+
+Case 3 is more tricky. We must deal with both children. How we do this is replace the node with the lowest node we can find and then re-arrange that nodes children just like we are re-arranging the current nodes children.
+
+Here is the pseudo code.
