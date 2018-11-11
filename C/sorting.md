@@ -77,5 +77,18 @@ siftDown:
 
 heap sort is O(n log n) and at most 4n comparisons
 
-Quicksort
+## Quicksort
 
+The quicksort algorithm revolved around the idea of **partitioning** a list based on one of the values called a **pivot**.
+
+Say we have the following list:
+
+> 53 12 98 63 18 32 80 46 72 21
+
+We can partition it with respect to the first value `53`. Meaning we will place `53` such that all of the values to the left of `53` are smaller, and all values to the right are larger.
+
+This leaves us with the following list order:
+
+> 12 21 18 32 46 53 80 98 72 63
+
+`53` is the **pivot**. It is placed in position 5. The location at which the pivot is placed is called the **division point**.

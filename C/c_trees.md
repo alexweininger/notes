@@ -112,3 +112,20 @@ Case 2 is pretty simple as well since we can just replace the node with its only
 Case 3 is more tricky. We must deal with both children. How we do this is replace the node with the lowest node we can find and then re-arrange that nodes children just like we are re-arranging the current nodes children.
 
 Here is the pseudo code.
+
+```c
+deleteNode (TreeNode t) {
+  if (T == NULL) return NULL;
+
+  if (right(T) == NULL) return left(T)
+
+  R = right(T)
+
+  if (left(T) == NULL) return R
+
+  if (left(R) == NULL) {
+    left(R) == left(T)
+    return R
+  }
+}
+```
