@@ -92,3 +92,18 @@ This leaves us with the following list order:
 > 12 21 18 32 46 53 80 98 72 63
 
 `53` is the **pivot**. It is placed in position 5. The location at which the pivot is placed is called the **division point**.
+
+Now we keep repeating this process on each _half_ of the list to achieve a fully sorted list.
+
+If the pivot chosen is the smallest number in the list, then the recursive call _trims_ off the first value by calling it with low + 1
+
+pseudocode:
+
+```c
+Quicksort (List L, int low, int high) {
+	if (low < high) {
+		part = Partition(List L, int low. int high);
+		
+	}
+	}
+```

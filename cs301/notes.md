@@ -182,3 +182,7 @@ public Object getElement(ArrayList<String> v) {
 	}
 }
 ```
+
+deadlock: If you have threads that all want to do the same thing, and they get stuck waiting for the other threads forever.
+
+To avoid this, try to use Synchronization sparingly.

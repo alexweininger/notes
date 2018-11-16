@@ -127,5 +127,18 @@ deleteNode (TreeNode t) {
     left(R) == left(T)
     return R
   }
+
+  while (left(R) != NULL) {
+    P = R
+    R = left(R)
+  }
+
+  left(R) = left(T)
+  left(P) = right(R)
+  right(R) = right(T)
+  return R
 }
 ```
+
+### Creating a Best Binary Search Tree from Sorted Keys
+
