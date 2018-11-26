@@ -75,13 +75,13 @@ Using final can prevent data races.
 The `Runnable` interface is preferred to sub classing `thread`.
 
 ```java
-implements Runnable
+public class ClassWithThread implements Runnable
 
 @Override public void run() {
 	// stuff for thread to do
 }
 
-Thread myThread = new Thread(runnableObject); // create thread
+Thread myThread = new Thread(new ClassWithThread()); // create thread
 myThread.start(); // run this as a thread
 ```
 
