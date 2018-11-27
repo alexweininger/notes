@@ -272,6 +272,50 @@ Merge sort breaks up the list into individual pieces and then _merges_ the items
 
 ### Complexity of sorting algorithms
 
+## Graphs
+
+### Terminology
+
+vertex: A node or point on a graph.
+
+edge: A connection between vertices on a graph.
+
+directed: edges are given direction
+
+An **undirected** graph has edges that do not have direction.
+
+The **degree** of a vertex is the number of edges connect to it.
+
+predecessor
+
+successor
+
+A graph is connected if there are no unreachable vertices.
+
+A graph is **acyclic** if it has not loops or cycles.
+
+weighted: edges have weights, also known as cost
+
+adjacent:
+
+### Applications of graphs
+
+### Graph searching
+
+There are two main types of graph searches. Depth first search and breadth first search.
+
+### Depth first search
+
+### Breadth first search
+
+### Representations
+
+### Topological sort
+
+Topological Sorting for a graph is not possible if the graph is not a DAG.
+
+### Dijkstra's algorithm
+
 ## Review Problems
 
 **Suppose the following binary search tree is created.**
@@ -392,7 +436,7 @@ struct TreeTag * right;
 ```c
 int countLeaves(Tree * root) {
     if (root == NULL) return 0;
-    if (root->left == NULL && root->right == NULL) return 1;
+    if (root->left == NULL && root->right == NULL) return 1
 
     if (root->left != NULL)
         retrun countLeaves(root->left) + 1;
