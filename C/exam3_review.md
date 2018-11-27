@@ -20,45 +20,26 @@
 	* [Deletion from binary search tree](#deletion-from-binary-search-tree)
 		* [Searching binary search tree](#searching-binary-search-tree)
 		* [Rotating binary search tree](#rotating-binary-search-tree)
-		* [Recursive functions on trees](#recursive-functions-on-trees-1)
 	* [Sorting](#sorting)
 		* [Selection sort](#selection-sort)
 		* [Insertion sort](#insertion-sort)
-		* [Quicksort](#quicksort)
+		* [Heap sort](#heap-sort)
 		* [Merge sort](#merge-sort)
-		* [Complexity of sorting algorithms](#complexity-of-sorting-algorithms)
+		* [Quicksort](#quicksort)
+	* [Graphs](#graphs)
+		* [Terminology](#terminology)
+		* [Applications of graphs](#applications-of-graphs)
+		* [Graph searching](#graph-searching)
+		* [Depth first search](#depth-first-search)
+		* [Breadth first search](#breadth-first-search)
+		* [Representations](#representations)
+			* [Adjacency matrix](#adjacency-matrix)
+			* [Adjacency list](#adjacency-list)
+		* [Topological sort](#topological-sort)
+		* [Dijkstra's algorithm](#dijkstras-algorithm)
 	* [Review Problems](#review-problems)
 
 <!-- /code_chunk_output -->
-
-* Dictionary ADT
-* Trees
-  * Traversals (preorder, post order, in order)
-  * Terminology, such as parent, child, leaf, root, descendant, ancestor, height
-  * Applications of trees
-  * Recursive functions on trees
-* Binary Search Trees
-  * insertion
-  * deletion
-  * finding items (find a key, find min in tree, find max in tree)
-  * rotations (balancing)
-  * Recursive functions on trees, such as height and number of nodes
-* Sorting
-  * Selection sort
-  * Insertion sort
-  * Quicksort
-  * Merge sort
-  * Complexity of sorting routines
-* Graphs
-  * Searches
-  * Depth*first search
-  * Breadth-first search
-  * Terminology, such as vertex, edge, directed, undirected, degree, predecessor, successor, connected, acyclic, weighted
-  * Applications of graphs
-  * Representations
-    * Adjacency Matrix
-    * Adjacency List
-  * Dijkstra’s algorithm: single source, shortest paths (basis of HW 5)
 
 ## Dictionary
 
@@ -78,7 +59,7 @@ There are three primary kinds of tree traversals. Which differ in the order in w
 
 #### Pre-order
 
-Pre-order traversal visits the parent node, left child, and then the right child.
+Pre-order traversal visits the parent node, left child, and then the right child. Pre-order traversal will always visit the root first.
 
 ![tree](2018-11-23-17-19-03.png)
 
@@ -97,7 +78,7 @@ void preOrder(TreeNode * root) {
 
 #### In-order
 
-In-order traversal visits the left child, the parent, and then the right child.
+In-order traversal visits the left child, the parent, and then the right child. Traversing a binary search tree with in-order traversal will always give sorted order.
 
 ![tree](2018-11-23-17-19-03.png)
 
@@ -145,13 +126,13 @@ A node with no children is called a **leaf** node.
 
 Nodes which share a parent are called **siblings**.
 
-Height
+The **height** of a tree is the number of nodes along the longest path from the root to a leave.
 
-Level
+The **level** of a tree is the vertical position of the node, the root is at level 0.
 
-descendant
+A **descendant** is a node contained in the subtree of another node.
 
-ancestor
+A node is an **ancestor** of all the nodes in its subtree.
 
 ### Properties of trees
 
@@ -231,6 +212,10 @@ void insertTree(Node ** treePtr, int key) {
 }
 ```
 
+The average complexity of insertion into a binary search tree is `O(log n)`.
+
+Worst complexity is `O(n)`.
+
 ## Deletion from binary search tree
 
 Deleting a node from a binary search tree is not as simple as inserting. Consider deleting a node with two children, where do you put the children?
@@ -243,34 +228,35 @@ void deleteFromTree(Node * node, Node ** treePtr) {
 
 ### Searching binary search tree
 
-  * finding items (find a key, find min in tree, find max in tree)
+  finding items (find a key, find min in tree, find max in tree)
 
 ### Rotating binary search tree
-
-### Recursive functions on trees
-
-    Recursive functions on trees
-    such as height and number of nodes
 
 ## Sorting
 
 ### Selection sort
 
-Big-O: `O(n)`
+Big-O: `O(n^2)`
 
 ### Insertion sort
 
-Big-O: ``
+Big-O: `O(n^2)`
 
-### Quicksort
+### Heap sort
 
-Quicksort uses partitions to recursively sort items bit by bit.
+Big-O: `O(n log n)`
 
 ### Merge sort
 
+Big-O: `O(n log n)`
+
 Merge sort breaks up the list into individual pieces and then _merges_ the items into sorted order.
 
-### Complexity of sorting algorithms
+### Quicksort
+
+Big-O: `O(n log n)`
+
+Quicksort uses partitions to recursively sort items bit by bit.
 
 ## Graphs
 
@@ -286,19 +272,24 @@ An **undirected** graph has edges that do not have direction.
 
 The **degree** of a vertex is the number of edges connect to it.
 
-predecessor
+A vertex has a **predecessor** which is the vertex that goes to the vertex.
 
-successor
+Successors: vertex that can be accessed from this vertex
 
 A graph is connected if there are no unreachable vertices.
 
 A graph is **acyclic** if it has not loops or cycles.
 
-weighted: edges have weights, also known as cost
+Edges can have weight or cost. A graph with weighted edges is called a **weighted** graph.
 
-adjacent:
+Two vertices are **adjacent** if they share an undirected edge. Or in the case of a directed graph, vertex X is **adjacent** to vertex Y if there is an edge from X to Y.
 
 ### Applications of graphs
+
+* network representations
+* mapping
+    * road maps
+    * google maps
 
 ### Graph searching
 
@@ -310,11 +301,17 @@ There are two main types of graph searches. Depth first search and breadth first
 
 ### Representations
 
+#### Adjacency matrix
+
+#### Adjacency list
+
 ### Topological sort
 
 Topological Sorting for a graph is not possible if the graph is not a DAG.
 
 ### Dijkstra's algorithm
+
+Dijkstra's algorithm finds the shortest path between nodes in a graph.
 
 ## Review Problems
 
@@ -380,13 +377,15 @@ Show the tree after `3` is inserted.
 
 **6. I have a binary tree (not necessarily a binary search tree).**
 
-**When I print the elements using preorder traversal, this is the order:**
-`6 4 12 8 7 2 36 94`
-
-**When I print the elements using inorder traversal, this is the order:**
-`12 4 8 6 7 36 94 2`
+**When I print the elements using preorder traversal, this is the order:** `6 4 12 8 7 2 36 94`
+**When I print the elements using in order traversal, this is the order:** `12 4 8 6 7 36 94 2`
 
 **Draw the binary tree.**
+
+This problem is tricky, however keep in mind the following to help solve this problem.
+
+1. The in order traversal of a tree is in left to right order. Consider the node with the value `7`, all elements to the right of `7` are in the right subtree of `7`.
+2. The first node printed in the pre order traversal is the root.
 
 **Answer:**
 
@@ -433,6 +432,8 @@ struct TreeTag * right;
 
 **Answer:**
 
+We can solve this problem with a simple recursive function.
+
 ```c
 int countLeaves(Tree * root) {
     if (root == NULL) return 0;
@@ -445,6 +446,38 @@ int countLeaves(Tree * root) {
 }
 ```
 
+**16. Show the values of the list after the partition step in quicksort (textbook’s version) using pivot value 30:**
+`30 15 75 64 20 2 8 35`
+
+**Answer:**
+
+1. `30 15 75 64 20 2 8 35` 15 swaps with itself
+
+2. `30 15 20 64 75 2 8 35` 20 is swapped with 75
+
+3. `30 15 20 2 75 64 8 35` 2 is swapped with 64
+
+4. `30 15 20 2 8 64 75 35` 8 is swapped with 75
+
+5. `8 15 20 2 30 64 75 35` The pivot (30) is swapped with the last smallest (8).
+
+**17. Show the division and merge steps to sort the following list of integers using merge sort:**
+`30 15 75 64 20 2 8 35`
+
+**Answer:**
+
+1. `30 15 75 64` `20 2 8 35`
+
+2. `30 15` `75 64` `20 2` `8 35`
+
+3. `30` `15` `75` `64` `20` `2` `8` `35`
+
+4. `15 30` `64 75` `2 20` `8 35`
+
+5. `15 30 64 75` `2 8 20 35`
+
+6. `2 8 15 20 30 35 64 75`
+
 **18. Assume a list has N items. What is the worst-case complexity of insertion sort?**
 
 **Answer:** `O(n^2)`
@@ -456,3 +489,5 @@ int countLeaves(Tree * root) {
 **20. What is the worst-case complexity of the insert operation for a binary search tree?**
 
 **Answer:** `O(n)`
+
+This is because the tree could have height `n` and be a long line of singly linked nodes (like a linked list) if the nodes are inserted in sorted order.
