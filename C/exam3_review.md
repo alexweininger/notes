@@ -180,6 +180,31 @@ int size(TreeNode *t) {
 }
 ```
 
+Find the number of leaves in a tree.
+
+```c
+int countLeaves(Tree * root) {
+    if (root == NULL) return 0;
+    if (root->left == NULL && root->right == NULL) return 1;
+
+    if (root->left != NULL)
+        retrun countLeaves(root->left) + 1;
+    if (root->right != NULL)
+        return countLeaves(root->right) + 1;
+}
+```
+
+Find the number of interior nodes with two children in a tree.
+
+```c
+int countInterior(Tree * root) {
+    if (root == NULL) return 0;
+    if (root->left != NULL && root->right != NULL)
+        return 1 + countInterior(root->left) + countInterior(root->right);
+    else  return countInterior(root->left) + countInterior(root->right);
+}
+```
+
 finding the height of a tree
 
 level order traversal
@@ -375,3 +400,15 @@ int countLeaves(Tree * root) {
         return countLeaves(root->right) + 1;
 }
 ```
+
+**18. Assume a list has N items. What is the worst-case complexity of insertion sort?**
+
+**Answer:** `O(n^2)`
+
+**19. Assume a list has N items. What is the worst-case complexity of quicksort?**
+
+**Answer:** `O(n^2)`
+
+**20. What is the worst-case complexity of the insert operation for a binary search tree?**
+
+**Answer:** `O(n)`
