@@ -148,6 +148,15 @@ Maximum number of nodes in a binary tree oh height `h` is `2^h - 1`.
 4. fast searches
 5. Binary search trees
 
+Example: From Java, class hierarchies.
+Example: From Coding, recursive function calls (hw 2, mazes).
+Example: From Data Compression, Huffman coding.
+Example: From Phone Menus, sequence of instructions (press 1 if you want to
+make a reservation, press 2 if you want to check on a reservation, press 3 if you
+want to speak to an operator; pressing 1 then asks, press 1 if you are making a
+reservation within the US, press 2 if you are making a reservation within Canada,
+etc.)
+
 ### Recursive functions on trees
 
 Functions to traverse trees can be written very simply using recursion which was shown in the traversal sections.
@@ -238,6 +247,32 @@ void deleteFromTree(Node * node, Node ** treePtr) {
 
 Big-O: `O(n^2)`
 
+```c
+void selectionSort(Item a[], int l, int r) {
+int i, j;
+// start at left, finding correct element
+for (i = l; i < r; i++) {
+// location of minimum element found so far on this iteration
+int minIdx = i;
+// loop through to find a
+for (j = i+1; j <= r; j++) {
+if (less(a[j], a[minIdx])) minIdx = j;
+    }
+  swap(&a[i], &a[minIdx]); // swap the "small" element into right spot
+  }
+}
+/* swap -- exchanges the values of two pointers
+Parameters:
+- p1: pointer to first value
+- p2: pointer to second value
+*/
+void swap(Item *p1, Item *p2) {
+  Item temp = *p1;
+  *p1 = *p2;
+  *p2 = temp;
+}
+```
+
 ### Insertion sort
 
 Big-O: `O(n^2)`
@@ -248,15 +283,39 @@ Big-O: `O(n log n)`
 
 ### Merge sort
 
-Big-O: `O(n log n)`
+Big-O: average: `O(n log n)` worst: `O(n log n)`
 
 Merge sort breaks up the list into individual pieces and then _merges_ the items into sorted order.
 
 ### Quicksort
 
-Big-O: `O(n log n)`
+Big-O: average: `O(n log n)` worst: `O(n^2)`
 
 Quicksort uses partitions to recursively sort items bit by bit.
+
+`5 8 2 4 10 6 3 7 1` pivot is 5, last small = 0
+
+Found 2, last small = 1. Swap 2 with 8.
+
+`5 2 8 4 10 6 3 7 1` last small = 1
+
+Found 4, last small = 2. Swap 4 with 8.
+
+`5 2 4 8 10 6 3 7 1` last small = 2
+
+Found 3, last small = 3. Swap 3 with 8.
+
+`5 2 4 3 10 6 8 7 1` last small = 3
+
+Found 1, last small = 4. Swap 1 with 10.
+
+`5 2 4 3 1 6 8 7 10` last small = 4.
+
+Did not find number less than 5. Swap pivot with last smallest (last smallest = 4), swapping 5 with 1.
+
+`1 2 4 3 5 6 8 7 10` last smallest = 4
+
+Return 4.
 
 ## Graphs
 
@@ -282,7 +341,17 @@ A graph is **acyclic** if it has not loops or cycles.
 
 Edges can have weight or cost. A graph with weighted edges is called a **weighted** graph.
 
-Two vertices are **adjacent** if they share an undirected edge. Or in the case of a directed graph, vertex X is **adjacent** to vertex Y if there is an edge from X to Y.
+Two vertices are **adjacent** if they share an undirected edge. Or in the case of a directed graph, vertex X is **adjacent** to vertex Y if there is an edge from Y to X.
+
+A **sparse** graph is a graph that has few edges compared to the number of vertices in the graph.
+
+A **dense** graph is a graph that has lots of edges compared to the number of vertices in the graph.
+
+### Properties of Graphs
+
+Max edges: undirected = 1/2 (n * (n – 1))
+
+directed: n (n – 1) or n^2 if reflexive
 
 ### Applications of graphs
 

@@ -188,7 +188,8 @@ void delete (TreeData d, TreeNode **tptr) {
       traverseParent->right = NULL;
       free(traverse);
     } else {
-      printf("something went wrong: parent of traversed node has invalid children");
+      printf("something went wrong: parent of traversed node has invalid "
+             "children");
       return;
     }
     return;
@@ -220,9 +221,7 @@ int size(TreeNode *t) {
 /* visit
  * prints value of node, called in traversal functions
  */
-void visit(TreeNode *t) {
-  printf("%d ", t->value);
-}
+void visit(TreeNode *t) { printf("%d ", t->value); }
 
 /* inorder
  * visits the nodes inorder (left, current, right) traversal
@@ -288,10 +287,8 @@ void print(TreeNode *t) {
 
 /* helper function, returns the maximum of two ints */
 int max(int a, int b) {
-  if (a > b)
-    return a;
-  else
-    return b;
+  if (a > b) return a;
+  else return b;
 }
 
 /* lab activity */
@@ -344,25 +341,46 @@ TreeData findMax(TreeNode *t) {
   if (t == NULL) {
     return -99999;
   }
-  if(t->right == NULL) {
+  if (t->right == NULL) {
     return t->value;
   }
   return findMax(t->right);
 }
 
-int countLeaves(TreeNode * root) {
-    if (root == NULL) return 0;
-    if (root->left == NULL && root->right == NULL) return 1;
+// int countLeaves(TreeNode * root) {
+//     if (root == NULL) return 0;
+//     if (root->left == NULL && root->right == NULL) return 1;
 
-    if (root->left != NULL)
-        return countLeaves(root->left) + 1;
-    if (root->right != NULL)
-        return countLeaves(root->right) + 1;
+//     if (root->left != NULL)
+//         return countLeaves(root->left) + 1;
+//     if (root->right != NULL)
+//         return countLeaves(root->right) + 1;
+// }
+
+// int countInterior(TreeNode * root) {
+//     if (root == NULL) return 0;
+//     if (root->left != NULL && root->right != NULL)
+//         return 1 + countInterior(root->left) + countInterior(root->right);
+//     else  return countInterior(root->left) + countInterior(root->right);
+// }
+
+int countInterior(TreeNode *root) {
+  if (root == NULL)
+    return 0;
+
+  if (root->left != NULL || root->right != NULL)
+    return 1 + countInterior(root->left) + countInterior(root->right);
 }
 
-int countInterior(TreeNode * root) {
-    if (root == NULL) return 0;
-    if (root->left != NULL && root->right != NULL)
-        return 1 + countInterior(root->left) + countInterior(root->right);
-    else  return countInterior(root->left) + countInterior(root->right);
+int countLeaves(TreeNode *root) {
+  if (NULL == root)
+    return 0;
+
+  // if not leaf return the count of both children
+  if (root->left != NULL || root->right != NULL)
+    return countLeaves(root->left) + countLeaves(root->right);
+
+  // if leaf return 1
+  if (root->left == NULL && root->right == NULL)
+    return 1;
 }

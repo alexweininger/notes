@@ -20,6 +20,7 @@ int main(void) {
 /* test1 -- builds BST */
 void test1(void) {
   // create array of ints to insert into tree
+  // int arr[] = {3, 6, 2, 1, 4, 8};
   int arr[] = {3, 6, 2};
   TreeNode * tree = createTree(arr, sizeof(arr)/sizeof(*arr));
   printf("Inorder: ");
