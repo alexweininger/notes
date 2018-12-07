@@ -31,7 +31,6 @@
   - Stacks
   - Queues
 
-
 - **Exam 3**
   - Dictionary ADT
   - Trees
@@ -79,3 +78,11 @@
   - Chaining
   - Double Hashing
   - Pros/Cons of open address hashing vs. chaining
+
+## Minimum Spanning Trees
+
+A minimum spanning tree is a subgraph of a graph which contains all the vertices in the graph with the least total cost or weight.
+
+There are two primary algorithms to calculate the minimum spanning tree for a given graph. Prim's and Kruskal's.
+
+### Prim's algorithm
