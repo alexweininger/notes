@@ -2,6 +2,8 @@
 
 ## Selection sort
 
+Big-O: `O(n^2)`
+
 algorithm outline:
 
 for i to length - 2
