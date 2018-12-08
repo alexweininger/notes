@@ -344,3 +344,48 @@ valid ordering 3: `7 28 -3 18 45 101 93 77`
 | null | Burger | Jam | Salad | Ham | null | null | Jello | Butter | null | null |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+
+**15. Find the minimum spanning tree for the graph below using Kruskal's algorithm. Show the ordering of the edges and determine which edges are added to the MST and which edges are not.**
+
+![question15](2018-12-07-16-31-33.png)
+
+**Answer:**
+
+ordering: `2 4 6 7 8 9 10 11 12`
+
+edges added: `2 4 6 8 9 12`
+
+edges not added: `7 10 11 14`
+
+graph:
+
+![answer15](2018-12-07-16-42-42.png)
+
+**16. Provide a definition of a data structure. An example is not a definition, but may help clarify the definition.**
+
+A data structure is a useful and standardized method of storage for an amount of data. This data structure can be used to store information for calculations, processing, and reference. Different data structures may be superior for certain types of data, and especially for different needs.
+
+For example if you want to represent a map, a graph might be the best choice compared to a list.
+
+**17. It is important to program defensively in C. Consider the following code snippets. Is it safe to execute as-is or should more defenses be added.**
+
+```c
+int i = 0;
+while (i < 5) {
+  printf("%s", label);
+  i++;
+}
+```
+
+**Safe as-is.**
+
+```c
+printf("%s", argv[2]);
+```
+
+**Not safe.**
+
+```c
+if (argc > 2)
+  printf("%s", argv[2]);
+```
