@@ -77,7 +77,15 @@ siftDown:
 
 heap sort is O(n log n) and at most 4n comparisons
 
+## Merge sort
+
+Big-O: average: `O(n log n)` worst: `O(n log n)`
+
+Merge sort breaks up the list into individual pieces and then _merges_ the items into sorted order.
+
 ## Quicksort
+
+Big-O: average: `O(n log n)` worst: `O(n^2)`
 
 The quicksort algorithm revolved around the idea of **partitioning** a list based on one of the values called a **pivot**.
 
@@ -93,6 +101,30 @@ This leaves us with the following list order:
 
 `53` is the **pivot**. It is placed in position 5. The location at which the pivot is placed is called the **division point**.
 
+Here is a step by step example of how the partition works.
+
+Found 2, last small = 1. Swap 2 with 8.
+
+`5 2 8 4 10 6 3 7 1` last small = 1
+
+Found 4, last small = 2. Swap 4 with 8.
+
+`5 2 4 8 10 6 3 7 1` last small = 2
+
+Found 3, last small = 3. Swap 3 with 8.
+
+`5 2 4 3 10 6 8 7 1` last small = 3
+
+Found 1, last small = 4. Swap 1 with 10.
+
+`5 2 4 3 1 6 8 7 10` last small = 4.
+
+Did not find number less than 5. Swap pivot with last smallest (last smallest = 4), swapping 5 with 1.
+
+`1 2 4 3 5 6 8 7 10` last smallest = 4
+
+Return 4.
+
 Now we keep repeating this process on each _half_ of the list to achieve a fully sorted list.
 
 If the pivot chosen is the smallest number in the list, then the recursive call _trims_ off the first value by calling it with low + 1
@@ -103,7 +135,7 @@ pseudocode:
 Quicksort (List L, int low, int high) {
 	if (low < high) {
 		part = Partition(List L, int low. int high);
-		
+
 	}
 	}
 ```

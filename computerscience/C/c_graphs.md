@@ -1,5 +1,33 @@
 # Graphs
 
+## Terminology
+
+vertex: A node or point on a graph.
+
+edge: A connection between vertices on a graph.
+
+directed: edges are given direction
+
+An **undirected** graph has edges that do not have direction.
+
+The **degree** of a vertex is the number of edges connect to it.
+
+A vertex has a **predecessor** which is the vertex that goes to the vertex.
+
+Successors: vertex that can be accessed from this vertex
+
+A graph is connected if there are no unreachable vertices.
+
+A graph is **acyclic** if it has not loops or cycles.
+
+Edges can have weight or cost. A graph with weighted edges is called a **weighted** graph.
+
+Two vertices are **adjacent** if they share an undirected edge. Or in the case of a directed graph, vertex X is **adjacent** to vertex Y if there is an edge from Y to X.
+
+A **sparse** graph is a graph that has few edges compared to the number of vertices in the graph.
+
+A **dense** graph is a graph that has lots of edges compared to the number of vertices in the graph.
+
 ## Bellman-Ford algorithm
 
 The Bellman-Ford finds the shortest path from a vertex to all other vertices. It does not require non-negative weights. And if the graph contains a **negative-weight cycle** it will detect that there is no solution.
