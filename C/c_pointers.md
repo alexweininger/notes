@@ -1,3 +1,0 @@
-# Pointers
-
-good luck.
