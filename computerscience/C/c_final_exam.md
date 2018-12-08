@@ -168,7 +168,7 @@ int countGreater(int n) {
 
 **5. Draw a binary search tree of height 3 that contains the following nodes: 10, 20, 30, 40, 50, 60. This is not necessarily the order in which they are inserted.**
 
-![q5](2018-12-07-14-46-58.png)
+![q5](./assets/2018-12-07-14-46-58.png)
 
 **6. Consider the code below.**
 
@@ -288,7 +288,7 @@ valid ordering 3: `7 28 -3 18 45 101 93 77`
 
 **10. Here is a binary tree:**
 
-![question10](2018-12-07-15-23-38.png)
+![question10](./assets/2018-12-07-15-23-38.png)
 
 **A. What is the post-order traversal?**
 
@@ -300,37 +300,37 @@ valid ordering 3: `7 28 -3 18 45 101 93 77`
 
 **Consider the following BST:**
 
-![question11](2018-12-07-15-49-37.png)
+![question11](./assets/2018-12-07-15-49-37.png)
 
 **A. Show the tree after inserting `32`.**
 
-![answer11](2018-12-07-15-51-55.png)
+![answer11](./assets/2018-12-07-15-51-55.png)
 
 **B. Show the tree after inserting `60`.**
 
-![answer11b](2018-12-07-15-53-42.png)
+![answer11b](./assets/2018-12-07-15-53-42.png)
 
 **C. Put *s near each node that is accessed when searching for data item `29`.**
 
-![answer11c](2018-12-07-15-55-09.png)
+![answer11c](./assets/2018-12-07-15-55-09.png)
 
 **D. Delete value `21` using the next successor approach. Cross out any values that are updated and cross out edges and nodes that are removed.**
 
-![answer11d](2018-12-07-15-57-24.png)
+![answer11d](./assets/2018-12-07-15-57-24.png)
 
 **12. Consider the following graph. Do depth-first traversal of the following graph starting with node A. If there is a choice, select the earliest vertex in alphabetical order. Show the parent, discover/finish times.**
 
-![question12](2018-12-07-15-59-04.png)
+![question12](./assets/2018-12-07-15-59-04.png)
 
 **Answer:**
 
-![answer12](2018-12-07-16-18-35.png)
+![answer12](./assets/2018-12-07-16-18-35.png)
 
 **13. Do breadth-first search on the graph in problem 12. Start with node A. For each node, label the parent and its distance from A.**
 
 **Answer:**
 
-![answer13](2018-12-07-16-22-54.png)
+![answer13](./assets/2018-12-07-16-22-54.png)
 
 **14. We are about the insert the following elements into an empty 11-slot open-address hash table with linear probing. What does the table look like after all the items have been inserted?**
 
@@ -347,7 +347,7 @@ valid ordering 3: `7 28 -3 18 45 101 93 77`
 
 **15. Find the minimum spanning tree for the graph below using Kruskal's algorithm. Show the ordering of the edges and determine which edges are added to the MST and which edges are not.**
 
-![question15](2018-12-07-16-31-33.png)
+![question15](./assets/2018-12-07-16-31-33.png)
 
 **Answer:**
 
@@ -359,7 +359,7 @@ edges not added: `7 10 11 14`
 
 graph:
 
-![answer15](2018-12-07-16-42-42.png)
+![answer15](./assets/2018-12-07-16-42-42.png)
 
 **16. Provide a definition of a data structure. An example is not a definition, but may help clarify the definition.**
 

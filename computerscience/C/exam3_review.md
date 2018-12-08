@@ -28,6 +28,7 @@
 		* [Quicksort](#quicksort)
 	* [Graphs](#graphs)
 		* [Terminology](#terminology)
+		* [Properties of Graphs](#properties-of-graphs)
 		* [Applications of graphs](#applications-of-graphs)
 		* [Graph searching](#graph-searching)
 		* [Depth first search](#depth-first-search)
@@ -47,7 +48,7 @@ Also called a hash map or a map.
 
 ## Trees
 
-![tree_diagram](2018-11-23-17-16-19.png)
+![tree_diagram](./assets/2018-11-23-17-16-19.png)
 
 ### Traversal
 
@@ -61,7 +62,7 @@ There are three primary kinds of tree traversals. Which differ in the order in w
 
 Pre-order traversal visits the parent node, left child, and then the right child. Pre-order traversal will always visit the root first.
 
-![tree](2018-11-23-17-19-03.png)
+![tree](./assets/2018-11-23-17-19-03.png)
 
 The pre-order traversal for this tree would be: `1 2 4 5 3`
 
@@ -80,7 +81,7 @@ void preOrder(TreeNode * root) {
 
 In-order traversal visits the left child, the parent, and then the right child. Traversing a binary search tree with in-order traversal will always give sorted order.
 
-![tree](2018-11-23-17-19-03.png)
+![tree](./assets/2018-11-23-17-19-03.png)
 
 The in-order traversal for this tree would be: `4 2 5 1 3`
 
@@ -99,7 +100,7 @@ void inOrder(TreeNode * root) {
 
 Post-order traversal visits the left child, the right child, and then the parent.
 
-![tree](2018-11-23-17-19-03.png)
+![tree](./assets/2018-11-23-17-19-03.png)
 
 The post-order traversal for the above tree is: `4 5 2 3 1`
 
@@ -386,7 +387,7 @@ Dijkstra's algorithm finds the shortest path between nodes in a graph.
 
 **Suppose the following binary search tree is created.**
 
-![binary_search_tree](2018-11-23-18-42-10.png)
+![binary_search_tree](./assets/2018-11-23-18-42-10.png)
 
 Show the tree after `7` is inserted.
 
@@ -423,15 +424,15 @@ Show the tree after `3` is inserted.
 
 **Draw the BST:**
 
-![answer](2018-11-23-18-50-44.png)
+![answer](./assets/2018-11-23-18-50-44.png)
 
 **Suppose the value 3 is deleted from the tree in #2. What does the BST look like after 3 is deleted?**
 
-![answer](2018-11-23-18-51-48.png)
+![answer](./assets/2018-11-23-18-51-48.png)
 
 **Suppose a BST looks like:**
 
-![question](2018-11-23-18-53-06.png)
+![question](./assets/2018-11-23-18-53-06.png)
 
 **Rotate the tree to the right, so that 5 is the new root of the tree. What does the tree look like?**
 
@@ -468,7 +469,7 @@ This problem is tricky, however keep in mind the following to help solve this pr
 
 **7. Assume we have the following BST. Delete the node with value 47. Explain all the steps in the deletion process:**
 
-![tree_7](2018-11-26-13-40-12.png)
+![tree_7](./assets/2018-11-26-13-40-12.png)
 
 **Answer:**
 
