@@ -29,6 +29,7 @@ Node *getNthNode(Node *, int);
 void printAndFreeR(Node *top);
 void printAndFree(Node *top);
 void printReversed(Node *top);
+void deleteAlternates(Node **listPtr);
 
 int main(int argc, char const *argv[]) {
   Node *top = NULL;
@@ -50,6 +51,11 @@ int main(int argc, char const *argv[]) {
   list2 = copy(top);
   printf("copy:\n");
   print(list2);
+
+  printf("after deleting alternates:\n");
+  deleteAlternates(&list2);
+  print(list2);
+
   printf("doubled copy\n");
   Node *list3 = NULL;
   list3 = doubleCopy(top);
@@ -59,8 +65,21 @@ int main(int argc, char const *argv[]) {
   printf("count 10s: %d\n", countR(top, 10));
   printf("get nth: 2 = %d\n", (getNthNode(top, 2)->num));
 
+  printf("after deleting alternates:\n");
+  deleteAlternates(&list3);
+  print(list3);
+
   printAndFreeR(top);
   return 0;
+}
+
+void deleteAlternates(Node **listPtr) {
+  Node *node = *listPtr;
+
+  while (NULL != node->next) {
+    node->next = node->next->next;
+    node = node->next;
+  }
 }
 
 Node *makeNode(int n, Node *nextNode) {

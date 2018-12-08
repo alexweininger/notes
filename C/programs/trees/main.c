@@ -20,9 +20,9 @@ int main(void) {
 /* test1 -- builds BST */
 void test1(void) {
   // create array of ints to insert into tree
-  // int arr[] = {3, 6, 2, 1, 4, 8};
-  int arr[] = {3, 6, 2};
-  TreeNode * tree = createTree(arr, sizeof(arr)/sizeof(*arr));
+  int arr[] = {3, 6, 2, 1, 4, 8};
+  // int arr[] = {3, 6, 2};
+  TreeNode *tree = createTree(arr, sizeof(arr) / sizeof(*arr));
   printf("Inorder: ");
   inorder(tree);
   printf("\nPreorder: ");
@@ -43,15 +43,15 @@ void test1(void) {
   printf("Size: %d\n", size(tree));
   printf("Height: %d\n", height(tree));
   printf("Num leaves: %d\n", countLeaves(tree));
-    printf("Num interior: %d\n", countInterior(tree));
+  printf("Num interior: %d\n", countInterior(tree));
+  printf("Num greater than 3: %d\n", countGreater(tree, 3));
 
-
-  TreeNode * d = find(3, tree);
-  TreeNode * e = find(0, tree);
-  if(d != NULL) {
+  TreeNode *d = find(3, tree);
+  TreeNode *e = find(0, tree);
+  if (d != NULL) {
     printf("contains 3\n");
   }
-  if(e != NULL) {
+  if (e != NULL) {
     printf("contains 0\n");
   }
 

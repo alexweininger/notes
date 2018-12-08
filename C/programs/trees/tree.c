@@ -384,3 +384,12 @@ int countLeaves(TreeNode *root) {
   if (root->left == NULL && root->right == NULL)
     return 1;
 }
+
+int countGreater(TreeNode * root, int n) {
+  if (NULL == root) return 0;
+  int a = 0;
+  if (root->value > n) {
+    a = 1;
+  }
+  return countGreater(root->left, n) + countGreater(root->right, n) + a;
+}
