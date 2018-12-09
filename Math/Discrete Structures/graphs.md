@@ -82,7 +82,7 @@ _note: this theorem is still just a sufficient condition._
 
 **Proof:**
 
-
+<http://faculty.wwu.edu/sarkara/dirac.pdf>
 
 **Can a Hamiltonian graph have a cut-vertex?**
 
