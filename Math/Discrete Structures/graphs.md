@@ -76,9 +76,13 @@ Parallel edges have no effect on a Hamiltonian graph.
 
 _note: Ore's theorem is only a sufficient condition for a Hamiltonian cycle. Meaning a Hamiltonian graph does not have to satisfy this condition, but if a graph does, it is a Hamiltonian cycle._
 
-**Dirac's Theorem:** If G is a connected graph on n-vertices where `n >= 3` so that for x, y of V(G), where `x != y`, and deg(x) + deg(y) >= n for all x, y of V(G), then G is a Hamiltonian graph.
+**Dirac's Theorem:** A simple graph with n vertices `(n ≥ 3)` is Hamiltonian if every vertex has degree `n / 2` or greater.
 
 _note: this theorem is still just a sufficient condition._
+
+**Proof:**
+
+
 
 **Can a Hamiltonian graph have a cut-vertex?**
 
