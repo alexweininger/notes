@@ -75,3 +75,9 @@ Parallel edges have no effect on a Hamiltonian graph.
 **Ore's Theorem:** Let G be a simple connected graph where `|V(G)| = n >= 3`. If `deg(x) + deg(y) >= n` for all nonadjacent x, y that exist in V(G), then G is Hamiltonian.
 
 _note: Ore's theorem is only a sufficient condition for a Hamiltonian cycle. Meaning a Hamiltonian graph does not have to satisfy this condition, but if a graph does, it is a Hamiltonian cycle._
+
+Can a Hamiltonian graph have a cut-vertex?
+
+A Hamiltonian graph must be connected
+
+No a Hamiltonian graph cannot have a cut-vertex.

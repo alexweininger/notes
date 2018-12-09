@@ -56,7 +56,7 @@ Prim's algorithm starts off with any vertex as the first vertex, and grows one v
 
 ### Kruskal's algorithm
 
-Steps for finding the minimum spanning tree using Kruskal's algorithm
+Steps for finding the minimum spanning tree using Kruskal's algorithm:
 
 1. Sort all the edges in non-decreasing order of their weight.
 
