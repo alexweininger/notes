@@ -76,8 +76,20 @@ Parallel edges have no effect on a Hamiltonian graph.
 
 _note: Ore's theorem is only a sufficient condition for a Hamiltonian cycle. Meaning a Hamiltonian graph does not have to satisfy this condition, but if a graph does, it is a Hamiltonian cycle._
 
-Can a Hamiltonian graph have a cut-vertex?
+**Dirac's Theorem:** If G is a connected graph on n-vertices where `n >= 3` so that for x, y of V(G), where `x != y`, and deg(x) + deg(y) >= n for all x, y of V(G), then G is a Hamiltonian graph.
 
-A Hamiltonian graph must be connected
+_note: this theorem is still just a sufficient condition._
 
-No a Hamiltonian graph cannot have a cut-vertex.
+**Can a Hamiltonian graph have a cut-vertex?**
+
+A cut-vertex must be the only vertex connecting two components of a graph, making them connected. Meaning the only way to get to the other component is through this vertex. Thus, once this vertex is visited it is impossible to reach the started vertex.
+
+Therefore, a Hamiltonian graph cannot have a cut-vertex.
+
+**Can a Hamiltonian graph have a bridge?**
+
+A bridge is an edge that when removed disconnects an otherwise connected graph. Meaning, the only way to get to the other component of the graph is to _cross_ the bridge. This visiting the two vertices connected by the bridge is the only way to get to the other component.
+
+Thus, once we have visited these vertices, to return to our starting vertex we must visit these vertices again. Which is in contradiction with the definition of a Hamiltonian graph.
+
+Therefore, a Hamiltonian graph cannot have a bridge.
