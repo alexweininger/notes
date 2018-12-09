@@ -516,7 +516,7 @@ int countLeaves(Tree * root) {
 }
 ```
 
-**16. Show the values of the list after the partition step in quicksort (textbook’s version) using pivot value 30:**
+**16. Show the values of the given list after the partition step in quicksort using pivot value 30:**
 `30 15 75 64 20 2 8 35`
 
 **Answer:**

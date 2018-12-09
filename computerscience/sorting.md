@@ -82,6 +82,7 @@ siftDown:
     store num[m] in num[root] // promote bigger child
     set root to m
 ```
+
 heap sort is O(n log n) and at most 4n comparisons
 
 ## Merge sort
