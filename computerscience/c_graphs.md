@@ -54,6 +54,8 @@ MST have useful applications, e.g. the minimum amount of wire to connect a few c
 
 Prim's algorithm starts off with any vertex as the first vertex, and grows one vertex at a time.
 
+Starting at each vertex, add the edge with the lowest weight. And move on to the connecting vertex. Repeat until you have |V| - 1 edges.
+
 ### Kruskal's algorithm
 
 Steps for finding the minimum spanning tree using Kruskal's algorithm:
