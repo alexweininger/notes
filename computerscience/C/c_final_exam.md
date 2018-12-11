@@ -276,17 +276,17 @@ valid ordering 3: `7 28 -3 18 45 101 93 77`
 
 **9. Give the worst-case O-notation for each of the following algorithms:**
 
-**A. mergesort, data is already sorted** `O(n log n)`
+- **A. mergesort, data is already sorted** `O(n log n)`
 
-**B. mergesort, data is not already sorted** `O(n log n)`
+- **B. mergesort, data is not already sorted** `O(n log n)`
 
-**C. quicksort, data is already sorted** `O(n)`
+- **C. quicksort, data is already sorted** `O(n)`
 
-**D. quicksort, data is not sorted** `O(n log n)`
+- **D. quicksort, data is not sorted** `O(n log n)`
 
-**E. binary search tree lookup, tree is balanced** `O(log n)`
+- **E. binary search tree lookup, tree is balanced** `O(log n)`
 
-**F. binary search tree lookup, tree is not balanced** `O(n)`
+- **F. binary search tree lookup, tree is not balanced** `O(n)`
 
 **10. Here is a binary tree:**
 
