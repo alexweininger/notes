@@ -56,6 +56,7 @@ int main(int argc, char const *argv[]) {
   deleteAlternates(&list2);
   print(list2);
 
+
   printf("doubled copy\n");
   Node *list3 = NULL;
   list3 = doubleCopy(top);
@@ -75,10 +76,11 @@ int main(int argc, char const *argv[]) {
 
 void deleteAlternates(Node **listPtr) {
   Node *node = *listPtr;
-
-  while (NULL != node->next) {
+  while (NULL != node && NULL != node->next) {
     node->next = node->next->next;
+    Node * temp = node;
     node = node->next;
+    free(temp);
   }
 }
 

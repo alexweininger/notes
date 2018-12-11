@@ -95,7 +95,7 @@ There are two primary algorithms to calculate the minimum spanning tree for a gi
 
     B. A pointer to an integer called p1. It should point to slot 6 of arr.
 
-    C. An array than contains 3 pointers to integers, each initialized to null. This should be called arr2.
+   C. An array than contains 3 pointers to integers, each initialized to null. This should be called arr2.
 
     D. A pointer-to-pointer to integer which points to slot 1 of arr2. This should be called p2.
 
@@ -129,7 +129,9 @@ void deleteAlternatives(Node ** listPtr) {
   Node *node = *listPtr;
   while (NULL != node->next) {
     node->next = node->next->next;
+    Node * temp = node;
     node = node->next;
+    free(temp);
   }
 }
 ```
@@ -292,7 +294,7 @@ valid ordering 3: `7 28 -3 18 45 101 93 77`
 
 **A. What is the post-order traversal?**
 
-`N B K H E F A J G K`
+`N B L H A E F J G K`
 
 **B. What is the in-order traversal?**
 
