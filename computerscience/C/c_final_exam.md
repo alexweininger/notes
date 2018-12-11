@@ -139,9 +139,13 @@ void deleteAlternatives(Node ** listPtr) {
 **3. Simplify the following O-notation expressions:**
 
 `O(n^8) + O(n^18) = O(n^18)`
+
 `O(n^3 (log n)^3) + O(n^5) = O(n^5)`
+
 `O(n^3) * O(n^8) = O(n^11)`
+
 `O(23) + O(3^17) = O(1)`
+
 `n^5 + 3n^5 + n^7 + 8152 = O(n^7)`
 
 **4. Consider the definition for a binary tree (not necessarily a binary search tree).**
