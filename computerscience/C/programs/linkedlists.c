@@ -41,6 +41,7 @@ int main(int argc, char const *argv[]) {
   top = makeNode(2, top);
   printf("length: %d\n", length(top));
   print(top);
+  printf("copy:\n");
   printReversed(top);
   insertTail(12, &top);
   print(top);
@@ -55,7 +56,6 @@ int main(int argc, char const *argv[]) {
   printf("after deleting alternates:\n");
   deleteAlternates(&list2);
   print(list2);
-
 
   printf("doubled copy\n");
   Node *list3 = NULL;
@@ -76,11 +76,18 @@ int main(int argc, char const *argv[]) {
 
 void deleteAlternates(Node **listPtr) {
   Node *node = *listPtr;
+
+  Node *temp = node;
+  *listPtr = node->next;
+  free(temp);
+
+  node = *listPtr;
+
   while (NULL != node && NULL != node->next) {
-    node->next = node->next->next;
-    Node * temp = node;
-    node = node->next;
+    temp = node->next;
+    node->next = temp->next;
     free(temp);
+    node = node->next;
   }
 }
 

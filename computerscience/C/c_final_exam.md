@@ -383,7 +383,7 @@ while (i < 5) {
 }
 ```
 
-**Safe as-is.**
+**Add a null check.**
 
 ```c
 printf("%s", argv[2]);
