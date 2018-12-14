@@ -1,0 +1,44 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - ReplaceSpaces",
+			"request": "launch",
+			"mainClass": "ReplaceSpaces"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - AnagramFinder",
+			"request": "launch",
+			"mainClass": "AnagramFinder"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - RemoveDuplicates",
+			"request": "launch",
+			"mainClass": "RemoveDuplicates"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - ReverseCStyleString",
+			"request": "launch",
+			"mainClass": "ReverseCStyleString"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Fibonacci",
+			"request": "launch",
+			"mainClass": "Fibonacci"
+		},
+		{
+			"type": "java",
+			"name": "Debug (Launch)",
+			"request": "launch",
+			"mainClass": ""
+		}
+	]
+}

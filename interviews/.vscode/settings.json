@@ -1,0 +1,11 @@
+{
+	"spellright.language": [
+		"en"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"java"
+	],
+	"java.home": "C:\\Program Files\\Java\\jdk1.8.0_181"
+}

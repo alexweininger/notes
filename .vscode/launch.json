@@ -1,7 +1,21 @@
 {
 	{
 		"version": "0.2.0",
-		"configurations": [{
+		"configurations": [
+
+			{
+				"type": "java",
+				"name": "Debug (Launch)",
+				"request": "launch",
+				"mainClass": ""
+			},
+			{
+				"type": "java",
+				"name": "Debug (Launch) - Current File",
+				"request": "launch",
+				"mainClass": "${file}"
+			},
+			{
 			"name": "(gdb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
