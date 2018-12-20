@@ -6,7 +6,7 @@ public class RobotGrid {
 
 	}
 
-	public static numberOfPaths(int[][] grid) {
+	public static void numberOfPaths(int[][] grid) {
 
 	}
 }

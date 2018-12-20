@@ -1,3 +1,5 @@
+package ArraysAndStrings;
+
 /**
  * AnagramFinder
  */
@@ -15,8 +17,10 @@ public class AnagramFinder {
 			return false;
 
 		for (int i = 0; i < base.length(); i++) {
-			if (str.indexOf(base.charAt(i)) < 0) return false;
-			if (base.indexOf(str.charAt(i)) < 0) return false;
+			if (str.indexOf(base.charAt(i)) < 0)
+				return false;
+			if (base.indexOf(str.charAt(i)) < 0)
+				return false;
 		}
 		return true;
 	}

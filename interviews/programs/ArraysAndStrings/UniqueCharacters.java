@@ -1,3 +1,4 @@
+package ArraysAndStrings;
 import java.util.ArrayList;
 class UniqueCharacters {
 	public static void main(String[] args) {

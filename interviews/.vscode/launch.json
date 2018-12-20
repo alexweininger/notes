@@ -6,27 +6,40 @@
 	"configurations": [
 		{
 			"type": "java",
-			"name": "CodeLens (Launch) - UniqueCharacters",
+			"name": "CodeLens (Launch) - SetAllToZero",
 			"request": "launch",
-			"mainClass": "UniqueCharacters"
+			"mainClass": "SetAllToZero"
 		},
 		{
 			"type": "java",
-			"name": "Debug (Launch)",
+			"name": "CodeLens (Launch) - RotateArray",
 			"request": "launch",
-			"mainClass": ""
+			"mainClass": "RotateArray"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Fibonacci",
+			"request": "launch",
+			"mainClass": "Fibonacci"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - CountIslands",
+			"request": "launch",
+			"mainClass": "CountIslands"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - AnagramFinder",
+			"request": "launch",
+			"mainClass": "ArraysAndStrings.AnagramFinder",
+			"projectName": "interviews_7a7ae492"
 		},
 		{
 			"type": "java",
 			"name": "Debug (Launch) - Current File",
 			"request": "launch",
 			"mainClass": "${file}"
-		},
-		{
-			"type": "java",
-			"name": "Debug (Launch)-Fibonacci",
-			"request": "launch",
-			"mainClass": "Fibonacci"
 		}
 	]
 }
