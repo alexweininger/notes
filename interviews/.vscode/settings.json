@@ -8,5 +8,8 @@
 		"java"
 	],
 	"java.home": "C:\\Program Files\\Java\\jdk1.8.0_181",
-	"spellright.notificationClass": "hint"
+	"spellright.notificationClass": "hint",
+	"files.associations": {
+		"stdlib.h": "c"
+	}
 }

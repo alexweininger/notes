@@ -42,6 +42,8 @@ TreeNode * find(TreeData d, TreeNode * t);  // lab exercise
 TreeData findMax(TreeNode * t); // lab exercise
 int countInterior(TreeNode * root);
 int countLeaves(TreeNode * root);
+int isBalanced(TreeNode * root);
+void sortedArrayToBinaryTree(TreeNode * root, int arr[]);
 
 // for review
 int countGreater(TreeNode * root, int n);

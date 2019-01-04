@@ -6,6 +6,42 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "Debug (Launch)",
+			"request": "launch",
+			"mainClass": ""
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Graph",
+			"request": "launch",
+			"mainClass": "Graph"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Tree",
+			"request": "launch",
+			"mainClass": "Tree"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - BinarySearch",
+			"request": "launch",
+			"mainClass": "BinarySearch"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - GetNthLastNode",
+			"request": "launch",
+			"mainClass": "GetNthLastNode"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - RemoveDuplicates",
+			"request": "launch",
+			"mainClass": "RemoveDuplicates"
+		},
+		{
+			"type": "java",
 			"name": "CodeLens (Launch) - SetAllToZero",
 			"request": "launch",
 			"mainClass": "SetAllToZero"

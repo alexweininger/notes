@@ -5,7 +5,48 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
+
 #include "tree.h"
+
+// ctci 4.1 check if a tree is balanced
+int isBalanced(TreeNode *root) {
+  if (NULL == root)
+    return 0;
+  int hl = height(root->left);
+  int hr = height(root->right);
+  if (abs(hl - hr) < 2) {
+    return isBalanced(root->left) && isBalanced(root->right);
+  } else {
+    return 1;
+  }
+}
+
+void sortedArrayToBinaryTree(TreeNode * root, int arr[]) {
+  if (arr == NULL) return;
+  int i = 0;
+  TreeNode * current = root;
+  while (i < arr.length) {
+    if (current == NULL) {
+      current = newTreeNode(arr[i]);
+      i++;
+    }
+  } else {
+    
+  }
+}
+
+/* should return the height of the tree
+ * remember: the height of an empty tree is 0; otherwise, the
+ * height of the tree is the max of (1+height of left subtree) and
+ * (1+height of right subtree)
+ */
+int height(TreeNode *t) {
+  if (t == NULL) {
+    return 0;
+  }
+  return max(1 + height(t->left), 1 + height(t->right));
+}
 
 /* function definitions for binary search trees */
 
@@ -221,7 +262,9 @@ int size(TreeNode *t) {
 /* visit
  * prints value of node, called in traversal functions
  */
-void visit(TreeNode *t) { printf("%d ", t->value); }
+void visit(TreeNode *t) {
+  printf("%d ", t->value);
+}
 
 /* inorder
  * visits the nodes inorder (left, current, right) traversal
@@ -287,21 +330,10 @@ void print(TreeNode *t) {
 
 /* helper function, returns the maximum of two ints */
 int max(int a, int b) {
-  if (a > b) return a;
-  else return b;
-}
-
-/* lab activity */
-/* should return the height of the tree
- * remember: the height of an empty tree is 0; otherwise, the
- * height of the tree is the max of (1+height of left subtree) and
- * (1+height of right subtree)
- */
-int height(TreeNode *t) {
-  if (t == NULL) {
-    return 0;
-  }
-  return max(1 + height(t->left), 1 + height(t->right));
+  if (a > b)
+    return a;
+  else
+    return b;
 }
 
 /* lab activity */
@@ -347,23 +379,6 @@ TreeData findMax(TreeNode *t) {
   return findMax(t->right);
 }
 
-// int countLeaves(TreeNode * root) {
-//     if (root == NULL) return 0;
-//     if (root->left == NULL && root->right == NULL) return 1;
-
-//     if (root->left != NULL)
-//         return countLeaves(root->left) + 1;
-//     if (root->right != NULL)
-//         return countLeaves(root->right) + 1;
-// }
-
-// int countInterior(TreeNode * root) {
-//     if (root == NULL) return 0;
-//     if (root->left != NULL && root->right != NULL)
-//         return 1 + countInterior(root->left) + countInterior(root->right);
-//     else  return countInterior(root->left) + countInterior(root->right);
-// }
-
 int countInterior(TreeNode *root) {
   if (root == NULL)
     return 0;
@@ -385,8 +400,9 @@ int countLeaves(TreeNode *root) {
     return 1;
 }
 
-int countGreater(TreeNode * root, int n) {
-  if (NULL == root) return 0;
+int countGreater(TreeNode *root, int n) {
+  if (NULL == root)
+    return 0;
   int a = 0;
   if (root->value > n) {
     a = 1;

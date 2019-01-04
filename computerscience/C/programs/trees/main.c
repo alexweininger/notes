@@ -20,7 +20,10 @@ int main(void) {
 /* test1 -- builds BST */
 void test1(void) {
   // create array of ints to insert into tree
-  int arr[] = {3, 6, 2, 1, 4, 8};
+  // int arr[] = {3, 6, 2, 1, 4, 8};
+  // int arr[] = {5, 2, 7, 1, 3, 6, 8};
+  int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
   // int arr[] = {3, 6, 2};
   TreeNode *tree = createTree(arr, sizeof(arr) / sizeof(*arr));
   printf("Inorder: ");
@@ -57,6 +60,12 @@ void test1(void) {
 
   int max = findMax(tree);
   printf("max: %d\n", max);
+
+  printf("is balanced=%d\n", isBalanced(tree));
+
+  int arr2[] = {2, 1, 3};
+  TreeNode *bt = createTree(arr2, sizeof(arr2) / sizeof(*arr2));
+  printf("is balanced=%d\n", isBalanced(bt));
 
   freeTree(&tree);
   return;
