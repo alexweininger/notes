@@ -34,5 +34,15 @@ Applications at a glance
 Symbolic vs. continuous data
 
 symbolic: not changing, clearly defined
-
 continuous: rule based systems, a picture, EEG
+
+ML tasks
+
+* classifications
+* clustering
+* regressions
+* localization
+
+* supervised
+* unsupervised
+* semi-supervised
