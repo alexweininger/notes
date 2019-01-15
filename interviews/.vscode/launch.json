@@ -6,6 +6,36 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "CodeLens (Launch) - MaxSubArraySum",
+			"request": "launch",
+			"mainClass": "MaxSubArraySum"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - SortingAlgorithms",
+			"request": "launch",
+			"mainClass": "SortingAlgorithms"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - InnerSortingAlgorithms_1",
+			"request": "launch",
+			"mainClass": "InnerSortingAlgorithms_1"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - ValidParenthesisCombinations",
+			"request": "launch",
+			"mainClass": "ValidParenthesisCombinations"
+		},
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - PermutationsOfAString",
+			"request": "launch",
+			"mainClass": "PermutationsOfAString"
+		},
+		{
+			"type": "java",
 			"name": "CodeLens (Launch) - Coins",
 			"request": "launch",
 			"mainClass": "Coins"
