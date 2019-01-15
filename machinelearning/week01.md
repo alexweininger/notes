@@ -38,11 +38,11 @@ continuous: rule based systems, a picture, EEG
 
 ML tasks
 
-* classifications
-* clustering
-* regressions
-* localization
+* classifications - Yes or no, is this a cat. Classifying pictures
+* clustering - Grouping, similar to classification.
+* regressions - Identifying trends in a data set. Stock market predictions.
+* localization - Temporal position within the overall pattern, location based data. Heat maps?
 
-* supervised
-* unsupervised
-* semi-supervised
+* supervised, we know the answer to the data, finding blobs, we don't know what they are but we categorize them
+* unsupervised, we do not know the answer to the data, as in we do not have labels associated to the data
+* semi-supervised, hybrid approach
