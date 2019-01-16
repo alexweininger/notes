@@ -36,13 +36,23 @@ Symbolic vs. continuous data
 symbolic: not changing, clearly defined
 continuous: rule based systems, a picture, EEG
 
-ML tasks
+tasks
 
 * classifications - Yes or no, is this a cat. Classifying pictures
 * clustering - Grouping, similar to classification.
 * regressions - Identifying trends in a data set. Stock market predictions.
 * localization - Temporal position within the overall pattern, location based data. Heat maps?
 
+types
+
 * supervised, we know the answer to the data, finding blobs, we don't know what they are but we categorize them
 * unsupervised, we do not know the answer to the data, as in we do not have labels associated to the data
 * semi-supervised, hybrid approach
+
+steps
+
+* pre-processing
+* feature extraction
+* representation
+* learning
+* prediction
