@@ -56,3 +56,24 @@ steps
 * representation
 * learning
 * prediction
+
+
+what is the essence of learning
+
+convert data into a model, and use that model to create predictions
+
+delta = difference between predictions and data
+
+continue changing our model until  error gets low
+
+feed the model new data
+
+overfitting is useful for security
+
+training data set = T
+
+new data being used for validation = V
+
+error loss = J
+
+subscripts = parameters
