@@ -77,3 +77,24 @@ new data being used for validation = V
 error loss = J
 
 subscripts = parameters
+
+spam classifier - feature extractor
+stops each time it gets something wrong
+
+
+ocr handwriting
+
+more diverse training set = better results
+
+processing flow
+
+data science, feature extraction, ML Learning phase / ML: classification, prediction
+
+ML assumptions:
+- unbiased data sets
+- large and inclusive enough data
+- inductive reasoning possible
+	- learning data --> generalized data
+	- test data --> generalized model --> predictions
+
+imagine a house
