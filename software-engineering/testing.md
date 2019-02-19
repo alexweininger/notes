@@ -28,3 +28,7 @@ Writing unit tests before writing the code
 Unit testing:
 - white box testing: clarity
 - allows QA team to focus less on code bugs and more on system level testing
+
+Component testing: short of a feature, but it is a feature from a technical level.
+- unit testing may be uses for testing components
+- http unit or XML unit
