@@ -32,3 +32,10 @@ Unit testing:
 Component testing: short of a feature, but it is a feature from a technical level.
 - unit testing may be uses for testing components
 - http unit or XML unit
+
+Use case vs. scenario:
+-scenario is a whole user's story with the product, made up of multiple use cases
+
+Story acceptance testing
+
+characteristics of good SATs
