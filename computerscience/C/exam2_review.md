@@ -110,12 +110,12 @@ for(i=0; i*i < n; i++) {
 }
 ```
 
-O(n log n)
+O(n^(1.5))
 
 ```c
 int i, j;
 for (i = 0; i < n; i++) {      // linear loop  O(n) * ...
-  for (j = 1; j*j < n; j++) {  // ...log (n)
+  for (j = 1; j*j < n; j++) {  // ...O(n^(0.5))
     // do something in constant time...
   }
 }
