@@ -618,9 +618,10 @@ void printAndFreeR(Node * top) {
   if (top == NULL) {
     return;
   }
+  // print the value of the node
   printf("%d\n", top->num);
-  printAndFree(top->next);
-  free(top);
+  printAndFree(top->next); // recursive case
+  free(top); // free the node
 }
 ```
 
